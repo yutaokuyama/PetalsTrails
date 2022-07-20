@@ -19,24 +19,21 @@ namespace MultiLayerScreen
             _server = new OscServer(9000); // Port number
             _particleEffect = this.GetComponent<VisualEffect>();
             Debug.Log("Server listen on PORT 9000");
-
+            _position = new Vector3(0.0f,0.0f,0.0f);
             _server.MessageDispatcher.AddCallback(
                 "/test", // OSC address
                 (string address, OscDataHandle data) =>
                 {
                     _position = new Vector3(data.GetElementAsFloat(0), data.GetElementAsFloat(1), data.GetElementAsFloat(2));
+                    Debug.Log("Received");
                 }
             );
 
         }
-        void updateParticlePosition(Vector3 position)
-        {
-            _particleEffect.SetVector3("ParticleOrigin", position);
-        }
         // Update is called once per frame
         void Update()
         {
-            _particleEffect.SetVector3("ParticleOrigin", _position);
+             _particleEffect.SetVector3("ParticleOrigin", _position);
 
         }
 
