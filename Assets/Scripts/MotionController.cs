@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MotionController : MonoBehaviour
 {
-    public float velocity = 10.0f;
+    public float velocity = 0.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,5 +15,8 @@ public class MotionController : MonoBehaviour
     void Update()
     {
         this.transform.position += new Vector3(0.0f,0.0f,0.1f)*Time.deltaTime*velocity;
+        if(this.transform.position.z > 4.0){
+            this.transform.position  =  new Vector3( this.transform.position.x, this.transform.position.y,0.0f);
+        }
     }
 }
