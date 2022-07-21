@@ -231,6 +231,48 @@
       },
       "url": "https://packages.unity.com"
     },
+    "ga.fuquna.prefsgui": {
+      "version": "3.2.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://registry.npmjs.com"
+    },
+    "ga.fuquna.prefsgui.rosettaui": {
+      "version": "0.0.4",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "ga.fuquna.prefsgui": "3.2.0",
+        "ga.fuquna.rosettaui.uitoolkit": "0.0.9"
+      },
+      "url": "https://registry.npmjs.com"
+    },
+    "ga.fuquna.prefsguisyncformirror": {
+      "version": "1.0.1",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "ga.fuquna.prefsgui": "3.2.1"
+      },
+      "url": "https://registry.npmjs.com"
+    },
+    "ga.fuquna.rosettaui": {
+      "version": "0.4.0",
+      "depth": 2,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://registry.npmjs.com"
+    },
+    "ga.fuquna.rosettaui.uitoolkit": {
+      "version": "0.0.9",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "ga.fuquna.rosettaui": "0.4.0"
+      },
+      "url": "https://registry.npmjs.com"
+    },
     "jp.keijiro.klak.spout": {
       "version": "2.0.3",
       "depth": 0,
