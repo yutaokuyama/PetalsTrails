@@ -5,20 +5,21 @@ using UnityEngine.VFX;
 
 using OscJack;
 
-namespace MultiLayerScreen
+namespace LayeredScreen
 {
     public class UpdateParticleOrigin : MonoBehaviour
     {
         OscServer _server;
         VisualEffect _particleEffect;
         Vector3 _position;
+        public LayeredScreenManager  manager;
 
         // Start is called before the first frame update
         void Start()
         {
-            _server = new OscServer(9000); // Port number
+            _server = new OscServer(manager.OSCPort.Get()); // Port number
             _particleEffect = this.GetComponent<VisualEffect>();
-            Debug.Log("Server listen on PORT 9000");
+            Debug.LogFormat("Server listen on PORT {0}", manager.OSCPort.Get());
             _position = new Vector3(0.0f,0.0f,0.0f);
             _server.MessageDispatcher.AddCallback(
                 "/test", // OSC address

@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform: 12
-  _path: '%dataPath%/../../%productName%Prefs'
+  _path: C:\teamLab\LayeredScreen\PrefsGUI\Prefs
 --- !u!4 &171459214
 Transform:
   m_ObjectHideFlags: 0
@@ -318,6 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9cbeddcdf197e14c91717f169cba34e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 1736349532}
 --- !u!114 &194364765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1561,6 +1562,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4002032992138290985, guid: b505519b5e6839c448e69ec00ddb3f93, type: 3}
+      propertyPath: ignoreKeyList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002032992138290985, guid: b505519b5e6839c448e69ec00ddb3f93, type: 3}
+      propertyPath: ignoreKeyList.Array.data[0]
+      value: OSCPort
+      objectReference: {fileID: 0}
     - target: {fileID: 4002032992138290986, guid: b505519b5e6839c448e69ec00ddb3f93, type: 3}
       propertyPath: m_Name
       value: PrefsGUISync
@@ -1755,8 +1764,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1736349531}
+  - component: {fileID: 1736349532}
   m_Layer: 0
-  m_Name: States
+  m_Name: LayeredScreenManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1777,6 +1787,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1736349532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736349530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 790b4c9f055e46e4e81bc3c5f13b5bfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterClock:
+    _key: MasterClock
+    defaultValue: 0
+  offsetOfPC1:
+    _key: OffsetOfPC1
+    defaultValue: 0
+  OSCPort:
+    _key: OSCPORT
+    defaultValue: 9000
 --- !u!1001 &1785851522
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1853,7 +1884,7 @@ GameObject:
   - component: {fileID: 1789161556}
   - component: {fileID: 1789161558}
   m_Layer: 0
-  m_Name: MasterControl
+  m_Name: GeneralSettings
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1886,7 +1917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b0933a6257ae0d4cbcb410a8371966d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mediator: {fileID: 0}
+  manager: {fileID: 1736349532}
 --- !u!1 &1791321327 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 44c8b5c4c10739a47bcd57fbdc4fd94c, type: 3}
@@ -2496,6 +2527,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NetworkManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1856137648427511030, guid: 42c2b2f0e4291b54c8865e35b6bbdab8, type: 3}
+      propertyPath: playerPrefab
+      value: 
+      objectReference: {fileID: 4848925050965628086, guid: 3534915b8cde86a47a5d38d67f98f44b, type: 3}
     - target: {fileID: 1856137648427511031, guid: 42c2b2f0e4291b54c8865e35b6bbdab8, type: 3}
       propertyPath: m_RootOrder
       value: 9
