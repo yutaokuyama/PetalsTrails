@@ -33,13 +33,17 @@ namespace LayeredScreen {
         {
             Debug.Assert(screenId >= 0 && screenId <= 95);
 
-            int row_id = screenId / NUM_COL;
-            int col_id = screenId % NUM_COL;
+            int rowId = screenId / NUM_COL;
+            int colId = screenId % NUM_COL;
 
-            const int ROW_WIDTH = 5;
-            const int INTERBAL_COL = 5;
+            const int ROW_WIDTH = 8;
+            float INTERBAL_COL = 8.0f/ NUM_COL;
 
-            return new Vector3(col_id * INTERBAL_COL,0.0f,row_id * ROW_WIDTH);
+            Debug.LogFormat("Col_id:{0}", colId);
+            Debug.LogFormat("x:{0}", colId);
+
+
+            return new Vector3(colId * INTERBAL_COL - 8.0f/2.0f, 0.0f, rowId * ROW_WIDTH);
 
         }
     } 
