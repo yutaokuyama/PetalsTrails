@@ -318,6 +318,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9cbeddcdf197e14c91717f169cba34e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _particleEffect: {fileID: 0}
+  _position: {x: 0, y: 0, z: 0}
   manager: {fileID: 1736349532}
 --- !u!114 &194364765
 MonoBehaviour:
@@ -620,6 +622,51 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &660345307
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 660345308}
+  - component: {fileID: 660345309}
+  m_Layer: 0
+  m_Name: flowDetector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &660345308
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660345307}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.828563, y: 1.5449617, z: 2.5008917}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &660345309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660345307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3f35ab0bdbd0b6459d6425561abbf91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 0}
 --- !u!1 &665796602 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7882376022164389543, guid: 44c8b5c4c10739a47bcd57fbdc4fd94c, type: 3}
@@ -1807,12 +1854,14 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   masterClock: 0
+  currentFlaggedScreenId: 0
   offsetOfPC1:
     _key: OffsetOfPC1
     defaultValue: 0
   OSCPort:
     _key: OSCPort
-    defaultValue: 0
+    defaultValue: 6666
+  currentPlayerPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &1736349533
 MonoBehaviour:
   m_ObjectHideFlags: 0
