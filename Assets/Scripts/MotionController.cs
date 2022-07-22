@@ -14,9 +14,9 @@ public class MotionController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.position += new Vector3(0.0f,0.0f,0.1f)*Time.deltaTime*velocity;
+/*        this.transform.position += new Vector3(0.0f,0.0f,0.1f)*Time.deltaTime*velocity;
         if(this.transform.position.z > 4.0){
             this.transform.position  =  new Vector3( this.transform.position.x, this.transform.position.y,0.0f);
-        }
+        }*/
     }
 }
