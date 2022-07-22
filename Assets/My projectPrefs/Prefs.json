@@ -1,0 +1,16 @@
+{
+    "list": [
+        {
+            "key": "OSCPORT",
+            "value": "{\"value\":9010}"
+        },
+        {
+            "key": "MasterClock",
+            "value": "{\"value\":57.426368713378909}"
+        },
+        {
+            "key": "OffsetOfPC1",
+            "value": "{\"value\":0.0}"
+        }
+    ]
+}

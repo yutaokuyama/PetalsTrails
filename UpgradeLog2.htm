@@ -1,0 +1,287 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+ <html xmlns:msxsl="urn:schemas-microsoft-com:xslt"><head><meta content="en-us" http-equiv="Content-Language" /><meta content="text/html; charset=utf-16" http-equiv="Content-Type" /><title _locID="ConversionReport0">
+          移行レポート
+        </title><style> 
+                    /* Body style, for the entire document */
+                    body
+                    {
+                        background: #F3F3F4;
+                        color: #1E1E1F;
+                        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+                        padding: 0;
+                        margin: 0;
+                    }
+
+                    /* Header1 style, used for the main title */
+                    h1
+                    {
+                        padding: 10px 0px 10px 10px;
+                        font-size: 21pt;
+                        background-color: #E2E2E2;
+                        border-bottom: 1px #C1C1C2 solid; 
+                        color: #201F20;
+                        margin: 0;
+                        font-weight: normal;
+                    }
+
+                    /* Header2 style, used for "Overview" and other sections */
+                    h2
+                    {
+                        font-size: 18pt;
+                        font-weight: normal;
+                        padding: 15px 0 5px 0;
+                        margin: 0;
+                    }
+
+                    /* Header3 style, used for sub-sections, such as project name */
+                    h3
+                    {
+                        font-weight: normal;
+                        font-size: 15pt;
+                        margin: 0;
+                        padding: 15px 0 5px 0;
+                        background-color: transparent;
+                    }
+
+                    /* Color all hyperlinks one color */
+                    a
+                    {
+                        color: #1382CE;
+                    }
+
+                    /* Table styles */ 
+                    table
+                    {
+                        border-spacing: 0 0;
+                        border-collapse: collapse;
+                        font-size: 10pt;
+                    }
+
+                    table th
+                    {
+                        background: #E7E7E8;
+                        text-align: left;
+                        text-decoration: none;
+                        font-weight: normal;
+                        padding: 3px 6px 3px 6px;
+                    }
+
+                    table td
+                    {
+                        vertical-align: top;
+                        padding: 3px 6px 5px 5px;
+                        margin: 0px;
+                        border: 1px solid #E7E7E8;
+                        background: #F7F7F8;
+                    }
+
+                    /* Local link is a style for hyperlinks that link to file:/// content, there are lots so color them as 'normal' text until the user mouse overs */
+                    .localLink
+                    {
+                        color: #1E1E1F;
+                        background: #EEEEED;
+                        text-decoration: none;
+                    }
+
+                    .localLink:hover
+                    {
+                        color: #1382CE;
+                        background: #FFFF99;
+                        text-decoration: none;
+                    }
+
+                    /* Center text, used in the over views cells that contain message level counts */ 
+                    .textCentered
+                    {
+                        text-align: center;
+                    }
+
+                    /* The message cells in message tables should take up all avaliable space */
+                    .messageCell
+                    {
+                        width: 100%;
+                    }
+
+                    /* Padding around the content after the h1 */ 
+                    #content 
+                    {
+	                    padding: 0px 12px 12px 12px; 
+                    }
+
+                    /* The overview table expands to width, with a max width of 97% */ 
+                    #overview table
+                    {
+                        width: auto;
+                        max-width: 75%; 
+                    }
+
+                    /* The messages tables are always 97% width */
+                    #messages table
+                    {
+                        width: 97%;
+                    }
+
+                    /* All Icons */
+                    .IconSuccessEncoded, .IconInfoEncoded, .IconWarningEncoded, .IconErrorEncoded
+                    {
+                        min-width:18px;
+                        min-height:18px; 
+                        background-repeat:no-repeat;
+                        background-position:center;
+                    }
+
+                    /* Success icon encoded */
+                    .IconSuccessEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconSuccess#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAABcElEQVR4Xq2TsUsCURzHv15g8ZJcBWlyiYYgCIWcb9DFRRwMW5TA2c0/QEFwFkxxUQdxVlBwCYWOi6IhWgQhBLHJUCkhLr/BW8S7gvrAg+N+v8/v+x68Z8MGy+XSCyABQAXgBgHGALoASkIIDWSLeLBetdHryMjd5IxQPWT4rn1c/P7+xxp72Cs9m5SZ0Bq2vPnbPFafK2zDvmNHypdC0BPkLlQhxJsCAhQoZwdZU5mwxh720qGo8MzTxTTKZDPCx2HoVzp6lz0Q9tKhyx0kGs8Ny+TkWRKk8lCROwEduhyg9l/6lunOPSfmH3NUH6uQ0KHLAe7JYvJjevm+DAMGJHToKtigE+vwvIidxLamb8IBY9e+C5LiXREkfho3TSd06HJA13/oh6T51MTsfQbHrsMynQ5dDihFjiK8JJAU9AKIWTp76dCVN7HWHrajmUEGvyF9nkbAE6gLIS7kTUyuf2gscLoJrElZo/Mvj+nPz/kLTmfnEwP3tB0AAAAASUVORK5CYII=);
+                    }
+
+                    /* Information icon encoded */
+                    .IconInfoEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconInformation#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHElEQVR4Xs2TsUoDQRRF7wwoziokjZUKadInhdhukR9YP8DMX1hYW+QvdsXa/QHBbcXC7W0CamWTQnclFutceIQJwwaWNLlwm5k5d94M76mmaeCrrmsLYOocY12FcxZFUeozCqKqqgYA8uevv1H6VuPxcwlfk5N92KHBxfFeCSAxxswlYAW/Xr989x/mv9gkhtyMDhcAxgzRsp7flj8B/HF1RsMXq+NZMkopaHe7lbKxQUEIGbKsYNoGn969060hZBkQex/W8oRQwsQaW2o3Ago2SVcJUzAgY3N0lTCZZm+zPS8HB51gMmS1DEYyOz9acKO1D8JWTlafKIMxdhvlfdyT94Vv5h7P8Ky7nQzACmhvKq3zk3PjW9asz9D/1oigecsioooAAAAASUVORK5CYII=);
+                    }
+
+                    /* Warning icon encoded */
+                    .IconWarningEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconWarning#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAx0lEQVR4XpWSMQ7CMAxFf4xAyBMLCxMrO8dhaBcuwdCJS3RJBw7SA/QGTCxdWJgiQYWKXJWKIXHIlyw5lqr34tQgEOdcBsCOx5yZK3hCCKdYXneQkh4pEfqzLfu+wVDSyyzFoJjfz9NB+pAF+eizx2Vruts0k15mPgvS6GYvpVtQhB61IB/dk6AF6fS4Ben0uIX5odtFe8Q/eW1KvFeH4e8khT6+gm5B+t3juyDt7n0jpe+CANTd+oTUjN/U3yVaABnSUjFz/gFq44JaVSCXeQAAAABJRU5ErkJggg==);
+                    }
+
+                    /* Error icon encoded */
+                    .IconErrorEncoded
+                    {
+                        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+                        /* [---XsltValidateInternal-Base64EncodedImage:IconError#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABQElEQVR4XqWTvUoEQRCE6wYPZUA80AfwAQz23uCMjA7MDRQEIzPBVEyNTQUFIw00vcQTTMzuAh/AxEQQT8HF/3G/oGGnEUGuoNnd6qoZuqltyKEsyzVJq5I6rnUp6SjGeGhESikzzlc1eL7opfuVbrqbU1Zw9NCgtQMaZpY0eNnaaL2fHusvTK5vKu7sjSS1Y4y3QUA6K3e3Mau5UFDyMP7tYF9o8cAHZv68vipoIJg971PZIZ5HiwdvYGGvFVFHmGmZ2MxwmQYPXubPl9Up0tfoMQGetXd6mRbvhBw+boZ6WF7Mbv1+GsHRk0fQmPAH1GfmZirbCfDJ61tw3Px8/8pZsPAG4jlVhcPgZ7adwNWBB68lkRQWFiTgFlbnLY3DGGM7izIJIyT/jjIvEJw6fdJTc6krDzh6aMwMP9bvDH4ADSsa9uSWVJkAAAAASUVORK5CYII=);
+                    }
+                 </style><script type="text/javascript" language="javascript"> 
+          
+            // Startup 
+            // Hook up the the loaded event for the document/window, to linkify the document content
+            var startupFunction = function() { linkifyElement("messages"); };
+            
+            if(window.attachEvent)
+            {
+              window.attachEvent('onload', startupFunction);
+            }
+            else if (window.addEventListener) 
+            {
+              window.addEventListener('load', startupFunction, false);
+            }
+            else 
+            {
+              document.addEventListener('load', startupFunction, false);
+            } 
+            
+            // Toggles the visibility of table rows with the specified name 
+            function toggleTableRowsByName(name)
+            {
+               var allRows = document.getElementsByTagName('tr');
+               for (i=0; i < allRows.length; i++)
+               {
+                  var currentName = allRows[i].getAttribute('name');
+                  if(!!currentName && currentName.indexOf(name) == 0)
+                  {
+                      var isVisible = allRows[i].style.display == ''; 
+                      isVisible ? allRows[i].style.display = 'none' : allRows[i].style.display = '';
+                  }
+               }
+            }
+            
+            function scrollToFirstVisibleRow(name) 
+            {
+               var allRows = document.getElementsByTagName('tr');
+               for (i=0; i < allRows.length; i++)
+               {
+                  var currentName = allRows[i].getAttribute('name');
+                  var isVisible = allRows[i].style.display == ''; 
+                  if(!!currentName && currentName.indexOf(name) == 0 && isVisible)
+                  {
+                     allRows[i].scrollIntoView(true); 
+                     return true; 
+                  }
+               }
+               
+               return false;
+            }
+            
+            // Linkifies the specified text content, replaces candidate links with html links 
+            function linkify(text)
+            {
+                 if(!text || 0 === text.length)
+                 {
+                     return text; 
+                 }
+
+                 // Find http, https and ftp links and replace them with hyper links 
+                 var urlLink = /(http|https|ftp)\:\/\/[a-zA-Z0-9\-\.]+(:[a-zA-Z0-9]*)?\/?([a-zA-Z0-9\-\._\?\,\/\\\+&%\$#\=~;\{\}])*/gi;
+                 
+                 return text.replace(urlLink, '<a href="$&">$&</a>') ;
+            }
+            
+            // Linkifies the specified element by ID
+            function linkifyElement(id)
+            {
+                var element = document.getElementById(id);
+                if(!!element)
+                {
+                  element.innerHTML = linkify(element.innerHTML); 
+                }
+            }
+            
+            function ToggleMessageVisibility(projectName)
+            {
+              if(!projectName || 0 === projectName.length)
+              {
+                return; 
+              }
+              
+              toggleTableRowsByName("MessageRowClass" + projectName);
+              toggleTableRowsByName('MessageRowHeaderShow' + projectName);
+              toggleTableRowsByName('MessageRowHeaderHide' + projectName); 
+            }
+            
+            function ScrollToFirstVisibleMessage(projectName)
+            {
+              if(!projectName || 0 === projectName.length)
+              {
+                return; 
+              }
+              
+              // First try the 'Show messages' row
+              if(!scrollToFirstVisibleRow('MessageRowHeaderShow' + projectName))
+              {
+                // Failed to find a visible row for 'Show messages', try an actual message row 
+                scrollToFirstVisibleRow('MessageRowClass' + projectName); 
+              }
+            }
+           </script></head><body><h1 _locID="ConversionReport">
+          変換レポート - </h1><div id="content"><h2 _locID="OverviewTitle">概要</h2><div id="overview"><table><tr><th></th><th _locID="ProjectTableHeader">プロジェクト</th><th _locID="PathTableHeader">パス</th><th _locID="ErrorsTableHeader">エラー</th><th _locID="WarningsTableHeader">警告</th><th _locID="MessagesTableHeader">メッセージ</th></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Assembly-CSharp">Assembly-CSharp</a></strong></td><td>Assembly-CSharp.csproj</td><td class="textCentered"><a href="#Assembly-CSharpError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Assembly-CSharp-Editor">Assembly-CSharp-Editor</a></strong></td><td>Assembly-CSharp-Editor.csproj</td><td class="textCentered"><a href="#Assembly-CSharp-EditorError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#kcp2k">kcp2k</a></strong></td><td>kcp2k.csproj</td><td class="textCentered"><a href="#kcp2kError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Klak.Extensions">Klak.Extensions</a></strong></td><td>Klak.Extensions.csproj</td><td class="textCentered"><a href="#Klak.ExtensionsError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Klak.Math">Klak.Math</a></strong></td><td>Klak.Math.csproj</td><td class="textCentered"><a href="#Klak.MathError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Klak.Math.Editor">Klak.Math.Editor</a></strong></td><td>Klak.Math.Editor.csproj</td><td class="textCentered"><a href="#Klak.Math.EditorError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Klak.Motion">Klak.Motion</a></strong></td><td>Klak.Motion.csproj</td><td class="textCentered"><a href="#Klak.MotionError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Klak.Motion.Editor">Klak.Motion.Editor</a></strong></td><td>Klak.Motion.Editor.csproj</td><td class="textCentered"><a href="#Klak.Motion.EditorError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Klak.Wiring">Klak.Wiring</a></strong></td><td>Klak.Wiring.csproj</td><td class="textCentered"><a href="#Klak.WiringError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Klak.Wiring.Editor">Klak.Wiring.Editor</a></strong></td><td>Klak.Wiring.Editor.csproj</td><td class="textCentered"><a href="#Klak.Wiring.EditorError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Mirror">Mirror</a></strong></td><td>Mirror.csproj</td><td class="textCentered"><a href="#MirrorError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Mirror.Authenticators">Mirror.Authenticators</a></strong></td><td>Mirror.Authenticators.csproj</td><td class="textCentered"><a href="#Mirror.AuthenticatorsError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Mirror.CompilerSymbols">Mirror.CompilerSymbols</a></strong></td><td>Mirror.CompilerSymbols.csproj</td><td class="textCentered"><a href="#Mirror.CompilerSymbolsError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Mirror.Components">Mirror.Components</a></strong></td><td>Mirror.Components.csproj</td><td class="textCentered"><a href="#Mirror.ComponentsError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Mirror.Editor">Mirror.Editor</a></strong></td><td>Mirror.Editor.csproj</td><td class="textCentered"><a href="#Mirror.EditorError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Mirror.Examples">Mirror.Examples</a></strong></td><td>Mirror.Examples.csproj</td><td class="textCentered"><a href="#Mirror.ExamplesError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#SimpleWebTransport">SimpleWebTransport</a></strong></td><td>SimpleWebTransport.csproj</td><td class="textCentered"><a href="#SimpleWebTransportError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Telepathy">Telepathy</a></strong></td><td>Telepathy.csproj</td><td class="textCentered"><a href="#TelepathyError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#Unity.Mirror.CodeGen">Unity.Mirror.CodeGen</a></strong></td><td>Unity.Mirror.CodeGen.csproj</td><td class="textCentered"><a href="#Unity.Mirror.CodeGenError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr><tr><td class="IconErrorEncoded" /><td><strong><a href="#where-allocations">where-allocations</a></strong></td><td>where-allocations.csproj</td><td class="textCentered"><a href="#where-allocationsError">1</a></td><td class="textCentered"><a>0</a></td><td class="textCentered"><a href="#">0</a></td></tr></table></div><h2 _locID="SolutionAndProjectsTitle">ソリューションおよびプロジェクト</h2><div id="messages"><a name="Assembly-CSharp" /><h3>Assembly-CSharp</h3><table><tr id="Assembly-CSharpHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">メッセージ</th></tr><tr name="ErrorRowClassAssembly-CSharp"><td class="IconErrorEncoded"><a name="Assembly-CSharpError" /></td><td class="messageCell"><strong>Assembly-CSharp.csproj:
+        </strong><span>このプロジェクトの種類の基になるアプリケーションが見つかりませんでした。詳細については、このリンクを参照してください:http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Assembly-CSharp-Editor" /><h3>Assembly-CSharp-Editor</h3><table><tr id="Assembly-CSharp-EditorHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">メッセージ</th></tr><tr name="ErrorRowClassAssembly-CSharp-Editor"><td class="IconErrorEncoded"><a name="Assembly-CSharp-EditorError" /></td><td class="messageCell"><strong>Assembly-CSharp-Editor.csproj:
+        </strong><span>このプロジェクトの種類の基になるアプリケーションが見つかりませんでした。詳細については、このリンクを参照してください:http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="kcp2k" /><h3>kcp2k</h3><table><tr id="kcp2kHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">メッセージ</th></tr><tr name="ErrorRowClasskcp2k"><td class="IconErrorEncoded"><a name="kcp2kError" /></td><td class="messageCell"><strong>kcp2k.csproj:
+        </strong><span>このプロジェクトの種類の基になるアプリケーションが見つかりませんでした。詳細については、このリンクを参照してください:http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Klak.Extensions" /><h3>Klak.Extensions</h3><table><tr id="Klak.ExtensionsHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">メッセージ</th></tr><tr name="ErrorRowClassKlak.Extensions"><td class="IconErrorEncoded"><a name="Klak.ExtensionsError" /></td><td class="messageCell"><strong>Klak.Extensions.csproj:
+        </strong><span>このプロジェクトの種類の基になるアプリケーションが見つかりませんでした。詳細については、このリンクを参照してください:http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Klak.Math" /><h3>Klak.Math</h3><table><tr id="Klak.MathHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">メッセージ</th></tr><tr name="ErrorRowClassKlak.Math"><td class="IconErrorEncoded"><a name="Klak.MathError" /></td><td class="messageCell"><strong>Klak.Math.csproj:
+        </strong><span>このプロジェクトの種類の基になるアプリケーションが見つかりませんでした。詳細については、このリンクを参照してください:http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Klak.Math.Editor" /><h3>Klak.Math.Editor</h3><table><tr id="Klak.Math.EditorHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">メッセージ</th></tr><tr name="ErrorRowClassKlak.Math.Editor"><td class="IconErrorEncoded"><a name="Klak.Math.EditorError" /></td><td class="messageCell"><strong>Klak.Math.Editor.csproj:
+        </strong><span>このプロジェクトの種類の基になるアプリケーションが見つかりませんでした。詳細については、このリンクを参照してください:http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Klak.Motion" /><h3>Klak.Motion</h3><table><tr id="Klak.MotionHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">メッセージ</th></tr><tr name="ErrorRowClassKlak.Motion"><td class="IconErrorEncoded"><a name="Klak.MotionError" /></td><td class="messageCell"><strong>Klak.Motion.csproj:
+        </strong><span>このプロジェクトの種類の基になるアプリケーションが見つかりませんでした。詳細については、このリンクを参照してください:http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Klak.Motion.Editor" /><h3>Klak.Motion.Editor</h3><table><tr id="Klak.Motion.EditorHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">メッセージ</th></tr><tr name="ErrorRowClassKlak.Motion.Editor"><td class="IconErrorEncoded"><a name="Klak.Motion.EditorError" /></td><td class="messageCell"><strong>Klak.Motion.Editor.csproj:
+        </strong><span>このプロジェクトの種類の基になるアプリケーションが見つかりませんでした。詳細については、このリンクを参照してください:http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Klak.Wiring" /><h3>Klak.Wiring</h3><table><tr id="Klak.WiringHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">メッセージ</th></tr><tr name="ErrorRowClassKlak.Wiring"><td class="IconErrorEncoded"><a name="Klak.WiringError" /></td><td class="messageCell"><strong>Klak.Wiring.csproj:
+        </strong><span>このプロジェクトの種類の基になるアプリケーションが見つかりませんでした。詳細については、このリンクを参照してください:http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Klak.Wiring.Editor" /><h3>Klak.Wiring.Editor</h3><table><tr id="Klak.Wiring.EditorHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">メッセージ</th></tr><tr name="ErrorRowClassKlak.Wiring.Editor"><td class="IconErrorEncoded"><a name="Klak.Wiring.EditorError" /></td><td class="messageCell"><strong>Klak.Wiring.Editor.csproj:
+        </strong><span>このプロジェクトの種類の基になるアプリケーションが見つかりませんでした。詳細については、このリンクを参照してください:http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Mirror" /><h3>Mirror</h3><table><tr id="MirrorHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">メッセージ</th></tr><tr name="ErrorRowClassMirror"><td class="IconErrorEncoded"><a name="MirrorError" /></td><td class="messageCell"><strong>Mirror.csproj:
+        </strong><span>このプロジェクトの種類の基になるアプリケーションが見つかりませんでした。詳細については、このリンクを参照してください:http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Mirror.Authenticators" /><h3>Mirror.Authenticators</h3><table><tr id="Mirror.AuthenticatorsHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">メッセージ</th></tr><tr name="ErrorRowClassMirror.Authenticators"><td class="IconErrorEncoded"><a name="Mirror.AuthenticatorsError" /></td><td class="messageCell"><strong>Mirror.Authenticators.csproj:
+        </strong><span>このプロジェクトの種類の基になるアプリケーションが見つかりませんでした。詳細については、このリンクを参照してください:http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Mirror.CompilerSymbols" /><h3>Mirror.CompilerSymbols</h3><table><tr id="Mirror.CompilerSymbolsHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">メッセージ</th></tr><tr name="ErrorRowClassMirror.CompilerSymbols"><td class="IconErrorEncoded"><a name="Mirror.CompilerSymbolsError" /></td><td class="messageCell"><strong>Mirror.CompilerSymbols.csproj:
+        </strong><span>このプロジェクトの種類の基になるアプリケーションが見つかりませんでした。詳細については、このリンクを参照してください:http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Mirror.Components" /><h3>Mirror.Components</h3><table><tr id="Mirror.ComponentsHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">メッセージ</th></tr><tr name="ErrorRowClassMirror.Components"><td class="IconErrorEncoded"><a name="Mirror.ComponentsError" /></td><td class="messageCell"><strong>Mirror.Components.csproj:
+        </strong><span>このプロジェクトの種類の基になるアプリケーションが見つかりませんでした。詳細については、このリンクを参照してください:http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Mirror.Editor" /><h3>Mirror.Editor</h3><table><tr id="Mirror.EditorHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">メッセージ</th></tr><tr name="ErrorRowClassMirror.Editor"><td class="IconErrorEncoded"><a name="Mirror.EditorError" /></td><td class="messageCell"><strong>Mirror.Editor.csproj:
+        </strong><span>このプロジェクトの種類の基になるアプリケーションが見つかりませんでした。詳細については、このリンクを参照してください:http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Mirror.Examples" /><h3>Mirror.Examples</h3><table><tr id="Mirror.ExamplesHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">メッセージ</th></tr><tr name="ErrorRowClassMirror.Examples"><td class="IconErrorEncoded"><a name="Mirror.ExamplesError" /></td><td class="messageCell"><strong>Mirror.Examples.csproj:
+        </strong><span>このプロジェクトの種類の基になるアプリケーションが見つかりませんでした。詳細については、このリンクを参照してください:http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="SimpleWebTransport" /><h3>SimpleWebTransport</h3><table><tr id="SimpleWebTransportHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">メッセージ</th></tr><tr name="ErrorRowClassSimpleWebTransport"><td class="IconErrorEncoded"><a name="SimpleWebTransportError" /></td><td class="messageCell"><strong>SimpleWebTransport.csproj:
+        </strong><span>このプロジェクトの種類の基になるアプリケーションが見つかりませんでした。詳細については、このリンクを参照してください:http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Telepathy" /><h3>Telepathy</h3><table><tr id="TelepathyHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">メッセージ</th></tr><tr name="ErrorRowClassTelepathy"><td class="IconErrorEncoded"><a name="TelepathyError" /></td><td class="messageCell"><strong>Telepathy.csproj:
+        </strong><span>このプロジェクトの種類の基になるアプリケーションが見つかりませんでした。詳細については、このリンクを参照してください:http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="Unity.Mirror.CodeGen" /><h3>Unity.Mirror.CodeGen</h3><table><tr id="Unity.Mirror.CodeGenHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">メッセージ</th></tr><tr name="ErrorRowClassUnity.Mirror.CodeGen"><td class="IconErrorEncoded"><a name="Unity.Mirror.CodeGenError" /></td><td class="messageCell"><strong>Unity.Mirror.CodeGen.csproj:
+        </strong><span>このプロジェクトの種類の基になるアプリケーションが見つかりませんでした。詳細については、このリンクを参照してください:http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table><a name="where-allocations" /><h3>where-allocations</h3><table><tr id="where-allocationsHeaderRow"><th></th><th class="messageCell" _locID="MessageTableHeader">メッセージ</th></tr><tr name="ErrorRowClasswhere-allocations"><td class="IconErrorEncoded"><a name="where-allocationsError" /></td><td class="messageCell"><strong>where-allocations.csproj:
+        </strong><span>このプロジェクトの種類の基になるアプリケーションが見つかりませんでした。詳細については、このリンクを参照してください:http://go.microsoft.com/fwlink/?LinkID=299083&amp;projecttype=E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1</span></td></tr></table></div></div></body></html>
