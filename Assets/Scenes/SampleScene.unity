@@ -1564,11 +1564,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4002032992138290985, guid: b505519b5e6839c448e69ec00ddb3f93, type: 3}
       propertyPath: ignoreKeyList.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4002032992138290985, guid: b505519b5e6839c448e69ec00ddb3f93, type: 3}
       propertyPath: ignoreKeyList.Array.data[0]
       value: OSCPort
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002032992138290985, guid: b505519b5e6839c448e69ec00ddb3f93, type: 3}
+      propertyPath: ignoreKeyList.Array.data[1]
+      value: OffsetOfPC1
       objectReference: {fileID: 0}
     - target: {fileID: 4002032992138290986, guid: b505519b5e6839c448e69ec00ddb3f93, type: 3}
       propertyPath: m_Name
@@ -1765,6 +1769,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1736349531}
   - component: {fileID: 1736349532}
+  - component: {fileID: 1736349533}
   m_Layer: 0
   m_Name: LayeredScreenManager
   m_TagString: Untagged
@@ -1799,15 +1804,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 790b4c9f055e46e4e81bc3c5f13b5bfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  masterClock:
-    _key: MasterClock
-    defaultValue: 0
+  syncMode: 0
+  syncInterval: 0.1
+  masterClock: 0
   offsetOfPC1:
     _key: OffsetOfPC1
     defaultValue: 0
   OSCPort:
-    _key: OSCPORT
-    defaultValue: 9000
+    _key: OSCPort
+    defaultValue: 0
+--- !u!114 &1736349533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1736349530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneId: 96635591
+  serverOnly: 0
+  visible: 0
+  m_AssetId: 
+  hasSpawned: 0
 --- !u!1001 &1785851522
 PrefabInstance:
   m_ObjectHideFlags: 0

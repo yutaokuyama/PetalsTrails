@@ -13,8 +13,6 @@ namespace LayeredScreen
         {
             var root = GetComponent<RosettaUIRoot>();
             root.Build(CreateElement());
-
-            Debug.Log("Start");
         }
 
         Element CreateElement()

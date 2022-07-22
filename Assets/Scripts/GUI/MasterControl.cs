@@ -24,7 +24,6 @@ namespace LayeredScreen
         public Element CreateElement(LabelElement _)
         {
             return UI.Column(
-                manager.masterClock.CreateElement(),
                 manager.OSCPort.CreateElement(),
                 manager.offsetOfPC1.CreateElement(),
                 UI.Label(() => $"file path: {PrefsGUI.Kvs.PrefsKvsPathSelector.path}"),
