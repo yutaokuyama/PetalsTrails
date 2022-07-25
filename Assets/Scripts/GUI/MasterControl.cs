@@ -32,6 +32,7 @@ namespace LayeredScreen
                 manager.petalColorIntensity.CreateElement(),
                 manager.leafColor.CreateElement(),
                 manager.leafColorIntensity.CreateElement(),
+                manager.deviceId.CreateElement(),
                 UI.Label(() => $"file path: {PrefsGUI.Kvs.PrefsKvsPathSelector.path}"),
                 UI.Button(nameof(Prefs.Save), Prefs.Save),
                 UI.Button(nameof(Prefs.DeleteAll), Prefs.DeleteAll)

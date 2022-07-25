@@ -14,10 +14,7 @@ namespace LayeredScreen
         // Start is called before the first frame update
         [SyncVar]
         public float masterClock = 0.0f;
-
-        [SyncVar]
         public int currentFlaggedScreenId = 0;
-
 
         public PrefsFloat offsetOfPC1 = new PrefsFloat("OffsetOfPC1");
         public PrefsInt OSCPort = new PrefsInt("OSCPort");
@@ -30,7 +27,7 @@ namespace LayeredScreen
 
         public PrefsColor petalColor = new PrefsColor("PetalsColor");
         public PrefsFloat petalColorIntensity = new PrefsFloat("PetalColorIntensity");
-
+        public PrefsInt deviceId = new PrefsInt("DeviceId");
         OscServer _server;
         FlowDetector _flowDetector;
 
