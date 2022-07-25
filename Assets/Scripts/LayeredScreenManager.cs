@@ -28,6 +28,7 @@ namespace LayeredScreen
         public PrefsColor petalColor = new PrefsColor("PetalsColor");
         public PrefsFloat petalColorIntensity = new PrefsFloat("PetalColorIntensity");
         public PrefsInt deviceId = new PrefsInt("DeviceId");
+        public PrefsString spoutSenderName = new PrefsString("SpoutSenderName","preo_pc0");
         OscServer _server;
         FlowDetector _flowDetector;
 
@@ -69,7 +70,7 @@ namespace LayeredScreen
             }
         }
 
-        void onDisable()
+        void OnDisable()
         {
             _server.Dispose();
             _server = null;
