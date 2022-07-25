@@ -24,10 +24,15 @@ namespace LayeredScreen {
         // Update is called once per frame
         void Update()
         {
-                manager.currentPlayerPosition +=    (screenIdToPosition(manager.currentFlaggedScreenId) -manager.currentPlayerPosition)/24.0f;
-                Debug.LogFormat("PlayerPosition:{0}", manager.currentPlayerPosition);
+            const float speed = 24.0f;
+          manager.viewerPositions[screenIdToRowId(manager.currentFlaggedScreenId)] += (screenIdToPosition(manager.currentFlaggedScreenId) - manager.viewerPositions[screenIdToRowId(manager.currentFlaggedScreenId)]) / speed;
+            manager.viewerVelocityDirectionOfX[screenIdToRowId(manager.currentFlaggedScreenId)]  = -(screenIdToPosition(manager.currentFlaggedScreenId) - manager.viewerPositions[screenIdToRowId(manager.currentFlaggedScreenId)]).x / speed;
         }
 
+        private int screenIdToRowId(int screenId)
+        {
+            return screenId / NUM_COL;
+        }
 
         Vector3 screenIdToPosition(int screenId)
         {
@@ -39,11 +44,12 @@ namespace LayeredScreen {
             const int ROW_WIDTH = 8;
             float INTERBAL_COL = 8.0f/ NUM_COL;
 
-            Debug.LogFormat("Col_id:{0}", colId);
-            Debug.LogFormat("x:{0}", colId);
+            bool isBackRow = (rowId % 2 == 1);
+            Vector3 rowOffset = new Vector3(0.0f,0.0f,0.0f);
+            rowOffset.x = isBackRow?10.0f:0.0f;
 
 
-            return new Vector3(colId * INTERBAL_COL - 8.0f/2.0f, 0.0f, rowId * ROW_WIDTH);
+            return new Vector3(colId * INTERBAL_COL - 8.0f/2.0f, 0.0f, 0.0f) + rowOffset;
 
         }
     } 

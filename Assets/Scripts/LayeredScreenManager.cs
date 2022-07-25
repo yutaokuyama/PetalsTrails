@@ -10,6 +10,7 @@ namespace LayeredScreen
 {
     public class LayeredScreenManager : NetworkBehaviour
     {
+        
         // Start is called before the first frame update
         [SyncVar]
         public float masterClock = 0.0f;
@@ -25,6 +26,12 @@ namespace LayeredScreen
         FlowDetector _flowDetector;
 
         public Vector3 currentPlayerPosition = new Vector3(0.0f, 0.0f, 0.0f);
+        const int NUM_ROW = 8;
+        const int NUM_COL = 12;
+
+        public Vector3[] viewerPositions = new Vector3[NUM_ROW];
+        public float[] viewerVelocityDirectionOfX = new float[NUM_ROW];
+
 
         void Start()
         {
@@ -40,8 +47,9 @@ namespace LayeredScreen
                "/point/piece", (string address, OscDataHandle data) =>
     {
         currentFlaggedScreenId = data.GetElementAsInt(0);
-/*        Debug.LogFormat("currentFlaggedScreenId:{0}", currentFlaggedScreenId);
-*/    }
+        
+        Debug.LogFormat("currentFlaggedScreenId:{0}", currentFlaggedScreenId);
+    }
     );
         }
 
@@ -52,6 +60,12 @@ namespace LayeredScreen
             {
                 masterClock += 1.0f;
             }
+        }
+
+        void onDisable()
+        {
+            _server.Dispose();
+            _server = null;
         }
     }
 }

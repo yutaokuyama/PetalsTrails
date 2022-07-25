@@ -9,20 +9,23 @@ namespace LayeredScreen
     public class BindCurrentPlayerPositionToTrail : MonoBehaviour
     {
 
-        VisualEffect trailEffect;
+        public VisualEffect trailEffect;
 
         [SerializeField]
         private LayeredScreenManager manager;
         // Start is called before the first frame update
         void Start()
         {
-            trailEffect = this.GetComponent<VisualEffect>();
+            // trailEffect = this.GetComponent<VisualEffect>();
         }
 
         // Update is called once per frame
         void Update()
         {
-            trailEffect.SetVector3("ParticleOrigin", manager.currentPlayerPosition);
+            int rowId = trailEffect.GetInt("RowId");
+            
+            trailEffect.SetVector3("WalkerOffset", manager.viewerPositions[rowId]);
+            trailEffect.SetFloat("VIewerDirection", manager.viewerVelocityDirectionOfX[rowId]);
         }
     }
 }
