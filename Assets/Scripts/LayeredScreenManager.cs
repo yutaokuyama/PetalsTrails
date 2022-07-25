@@ -22,6 +22,15 @@ namespace LayeredScreen
         public PrefsFloat offsetOfPC1 = new PrefsFloat("OffsetOfPC1");
         public PrefsInt OSCPort = new PrefsInt("OSCPort");
 
+        public PrefsColor trailColor = new PrefsColor("TrailColor");
+        public PrefsFloat trailColorIntensity = new PrefsFloat("TrailColorIntensity");
+
+        public PrefsColor leafColor = new PrefsColor("LeafColor");
+        public PrefsFloat leafColorIntensity = new PrefsFloat("LeafColorIntensity");
+
+        public PrefsColor petalColor = new PrefsColor("PetalsColor");
+        public PrefsFloat petalColorIntensity = new PrefsFloat("PetalColorIntensity");
+
         OscServer _server;
         FlowDetector _flowDetector;
 
