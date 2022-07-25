@@ -16,6 +16,7 @@
     }
   ],
   "dependencies": {
+    "com.sidefx.vat": "file:../Assets/VATs/URP",
     "com.unity.collab-proxy": "1.15.18",
     "com.unity.feature.development": "1.0.1",
     "com.unity.ide.rider": "3.0.15",
@@ -31,6 +32,8 @@
     "ga.fuquna.prefsgui": "3.2.1",
     "ga.fuquna.prefsgui.rosettaui": "0.0.4",
     "ga.fuquna.prefsguisyncformirror": "1.0.1",
+    "jp.keijiro.kino.aqua.high-definition": "2.1.0",
+    "jp.keijiro.kino.post-processing": "2.1.15",
     "jp.keijiro.klak.spout": "2.0.3",
     "jp.keijiro.osc-jack": "2.0.0",
     "com.unity.modules.ai": "1.0.0",

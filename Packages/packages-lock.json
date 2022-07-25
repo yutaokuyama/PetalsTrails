@@ -1,5 +1,13 @@
 {
   "dependencies": {
+    "com.sidefx.vat": {
+      "version": "file:../Assets/VATs/URP",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.unity.render-pipelines.universal": "7.1.7"
+      }
+    },
     "com.unity.burst": {
       "version": "1.6.6",
       "depth": 1,
@@ -125,6 +133,17 @@
       "source": "builtin",
       "dependencies": {
         "com.unity.render-pipelines.core": "12.1.7"
+      }
+    },
+    "com.unity.render-pipelines.universal": {
+      "version": "12.1.7",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {
+        "com.unity.mathematics": "1.2.1",
+        "com.unity.burst": "1.5.0",
+        "com.unity.render-pipelines.core": "12.1.7",
+        "com.unity.shadergraph": "12.1.7"
       }
     },
     "com.unity.searcher": {
@@ -277,6 +296,34 @@
       "source": "registry",
       "dependencies": {
         "ga.fuquna.rosettaui": "0.4.0"
+      },
+      "url": "https://registry.npmjs.com"
+    },
+    "jp.keijiro.kino.aqua": {
+      "version": "2.1.0",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.render-pipelines.core": "12.1.0"
+      },
+      "url": "https://registry.npmjs.com"
+    },
+    "jp.keijiro.kino.aqua.high-definition": {
+      "version": "2.1.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.render-pipelines.high-definition": "12.1.0",
+        "jp.keijiro.kino.aqua": "2.1.0"
+      },
+      "url": "https://registry.npmjs.com"
+    },
+    "jp.keijiro.kino.post-processing": {
+      "version": "2.1.15",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.render-pipelines.high-definition": "7.4.1"
       },
       "url": "https://registry.npmjs.com"
     },
