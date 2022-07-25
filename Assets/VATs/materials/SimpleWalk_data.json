@@ -1,0 +1,22 @@
+{
+    "SimpleWalk": [
+        {
+            "_doubleTex": "0",
+            "_height": ".1",
+            "_normData": "1",
+            "_numOfFrames": "229",
+            "_packNorm": "1",
+            "_packPscale": "1",
+            "_paddedX": "1.0",
+            "_paddedY": "1.0",
+            "_pivMax": "0",
+            "_pivMin": "0",
+            "_posMax": "1.269307",
+            "_posMin": "-0.3511347",
+            "_scaleMax": "1.0",
+            "_scaleMin": "0.0",
+            "_speed": "0.26200873362445415",
+            "_width": ".1"
+        }
+    ]
+}
