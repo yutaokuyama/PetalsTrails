@@ -18,7 +18,7 @@ namespace LayeredScreen {
         
         void Start()
         {
-
+                Debug.LogFormat("PlayerPosition:{0}", manager.currentPlayerPosition);
         }
 
         // Update is called once per frame
