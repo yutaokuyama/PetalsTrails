@@ -22,7 +22,7 @@ namespace LayeredScreen
         // Update is called once per frame
         void Update()
         {
-            int rowId = trailEffect.GetInt("RowId");
+            int rowId = trailEffect.GetInt("RowId")  +  manager.deviceId * 2;
             
             trailEffect.SetVector3("WalkerOffset", manager.viewerPositions[rowId]);
             trailEffect.SetFloat("VIewerDirection", manager.viewerVelocityDirectionOfX[rowId]);

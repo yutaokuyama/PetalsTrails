@@ -42,6 +42,7 @@ namespace LayeredScreen
         void Start()
         {
             startOSCServer();
+            Debug.Assert(deviceId <4);
 
         }
 
