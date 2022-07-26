@@ -216,7 +216,7 @@ GameObject:
   - component: {fileID: 194364766}
   - component: {fileID: 194364768}
   m_Layer: 6
-  m_Name: Trail
+  m_Name: TrailsInFrontRow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1572,7 +1572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 44c8b5c4c10739a47bcd57fbdc4fd94c, type: 3}
       propertyPath: m_Name
-      value: WalkingInPlace
+      value: ViewerInFrontRow
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 44c8b5c4c10739a47bcd57fbdc4fd94c, type: 3}
       propertyPath: m_Enabled
@@ -1596,6 +1596,53 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44c8b5c4c10739a47bcd57fbdc4fd94c, type: 3}
+--- !u!1 &1366282800
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1366282801}
+  - component: {fileID: 1366282802}
+  m_Layer: 0
+  m_Name: ParticleEmittionController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1366282801
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366282800}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1736349531}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1366282802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1366282800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30783911be210184793efa37f12f7c50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 1736349532}
+  EffectOfFrontRow: {fileID: 194364762}
+  EffectOfBackRow: {fileID: 1562900625}
 --- !u!4 &1368453732 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 44c8b5c4c10739a47bcd57fbdc4fd94c, type: 3}
@@ -1702,7 +1749,7 @@ GameObject:
   - component: {fileID: 1562900622}
   - component: {fileID: 1562900621}
   m_Layer: 6
-  m_Name: Trail
+  m_Name: TrailsInBackRow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2013,6 +2060,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1885341658}
+  - {fileID: 1366282801}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2663,7 +2711,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 44c8b5c4c10739a47bcd57fbdc4fd94c, type: 3}
       propertyPath: m_Name
-      value: WalkingInPlace (1)
+      value: ViewerInBackRow
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 44c8b5c4c10739a47bcd57fbdc4fd94c, type: 3}
       propertyPath: m_Enabled
