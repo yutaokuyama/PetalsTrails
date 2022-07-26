@@ -33,13 +33,14 @@ namespace LayeredScreen
             if (manager.isServer)
             {
                 manager.viewerPositions[screenIdToRowId(manager.currentFlaggedScreenId)] += (screenIdToPosition(manager.currentFlaggedScreenId) - manager.viewerPositions[screenIdToRowId(manager.currentFlaggedScreenId)]) / speed;
-                for(int i  = 1;i< manager.viewerPositions.Count; i++)
+                for (int i = 1; i < manager.viewerPositions.Count; i++)
                 {
-                    manager.viewerPositions[i] = manager.viewerPositions[0] + calculateOffsetByRowId(i);
+                    manager.viewerPositions[i] += ((manager.viewerPositions[0] + calculateOffsetByRowId(i) - manager.viewerPositions[i]) / (i * 16));
 
                 }
             }
         }
+       
         
 
         // Update is called once per frame
