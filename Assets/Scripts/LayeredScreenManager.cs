@@ -4,7 +4,7 @@ using UnityEngine;
 using PrefsGUI;
 using Mirror;
 using OscJack;
-
+using System.Linq;
 
 namespace LayeredScreen
 {
@@ -12,7 +12,9 @@ namespace LayeredScreen
     {
 
         // Start is called before the first frame update
-        public int currentFlaggedScreenId = 0;
+        public int[] flaggedScreenIds = new int[256];
+        private int receivedScreenIdNumInOneRenderLoop = 0;
+
 
         public PrefsFloat offsetOfPC1 = new PrefsFloat("OffsetOfPC1");
         public PrefsInt OSCPort = new PrefsInt("OSCPort");
@@ -29,7 +31,8 @@ namespace LayeredScreen
         public PrefsString spoutSenderName = new PrefsString("SpoutSenderName", "preo_pc0");
         public PrefsBool delayMode = new PrefsBool("DelayMode", false);
         OscServer _server;
-        FlowDetector _flowDetector;
+        [SerializeField]
+        private FlowDetector _flowDetector;
 
         public Vector3 currentPlayerPosition = new Vector3(0.0f, 0.0f, 0.0f);
         const int NUM_ROW = 8;
@@ -50,6 +53,7 @@ namespace LayeredScreen
                 isRowEmitterEnabled.Add(false);
                 elapsedTimesFromLastViewerAppeared[i] = 0.0f;
             }
+
         }
 
         void Start()
@@ -69,17 +73,15 @@ namespace LayeredScreen
             _server.MessageDispatcher.AddCallback(
                "/point/piece", (string address, OscDataHandle data) =>
     {
-        currentFlaggedScreenId = data.GetElementAsInt(0);
-
-        Debug.LogFormat("currentFlaggedScreenId:{0}", currentFlaggedScreenId);
+        flaggedScreenIds[receivedScreenIdNumInOneRenderLoop] = data.GetElementAsInt(0);
+        receivedScreenIdNumInOneRenderLoop = receivedScreenIdNumInOneRenderLoop + 1;
     }
     );
         }
 
-        void updateMasterEffectState()
+        void updateMasterEffectState(int screenId)
         {
-            int currentHandleRowId = convertScreenIDToRowId(
-                currentFlaggedScreenId);
+            int currentHandleRowId = convertScreenIDToRowId(screenId);
             if (delayMode)
             {
                 updateMasterEffectStateInDelayMode(currentHandleRowId);
@@ -112,56 +114,62 @@ namespace LayeredScreen
                 }
             }
 
-            for(int row = 1;row<NUM_ROW;row++){
+            for (int row = 1; row < NUM_ROW; row++)
+            {
                 isRowEmitterEnabled[row] = isRowEmitterEnabled[0];
             }
         }
-    
-    void updateMasterEffectStateInEachRowMode(int currentHandleRowId)
-    {
-        for (int row = 0; row < NUM_ROW; row++)
+
+        void updateMasterEffectStateInEachRowMode(int currentHandleRowId)
         {
-            if (currentHandleRowId == row)
+            for (int row = 0; row < NUM_ROW; row++)
             {
-                if (!isRowEmitterEnabled[row])
+                if (currentHandleRowId == row)
                 {
-                    isRowEmitterEnabled[row] = true;
+                    if (!isRowEmitterEnabled[row])
+                    {
+                        isRowEmitterEnabled[row] = true;
+                    }
+                    elapsedTimesFromLastViewerAppeared[row] = 0.0f;
                 }
-                elapsedTimesFromLastViewerAppeared[row] = 0.0f;
+                else
+                {
+                    elapsedTimesFromLastViewerAppeared[row] += 1.0f / 60.0f;
+                    if (elapsedTimesFromLastViewerAppeared[row] > sleepTimeInSec.Get())
+                    {
+                        isRowEmitterEnabled[row] = false;
+                    }
+                }
             }
-            else
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            if (this.isServer)
             {
-                elapsedTimesFromLastViewerAppeared[row] += 1.0f / 60.0f;
-                if (elapsedTimesFromLastViewerAppeared[row] > sleepTimeInSec.Get())
-                {
-                    isRowEmitterEnabled[row] = false;
+                // var uniqueArray = flaggedScreenIds.Distinct();
+                for(int i = 0;i<receivedScreenIdNumInOneRenderLoop;i++){
+                    updateMasterEffectState(flaggedScreenIds[i]);
+                    _flowDetector.updatePositions(flaggedScreenIds[i]);
                 }
+                receivedScreenIdNumInOneRenderLoop = 0;
             }
         }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (this.isServer)
+        void OnDisable()
         {
-            updateMasterEffectState();
+            if (_server != null)
+            {
+                _server.Dispose();
+                _server = null;
+            }
+        }
+
+        private int convertScreenIDToRowId(int screenId)
+        {
+            const int NUM_COL = 12;
+            return screenId / NUM_COL;
         }
     }
-
-    void OnDisable()
-    {
-        if (_server != null)
-        {
-            _server.Dispose();
-            _server = null;
-        }
-    }
-
-    private int convertScreenIDToRowId(int screenId)
-    {
-        const int NUM_COL = 12;
-        return screenId / NUM_COL;
-    }
-}
 }

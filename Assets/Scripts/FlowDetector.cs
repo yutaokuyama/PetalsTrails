@@ -20,19 +20,19 @@ namespace LayeredScreen
         {
             Debug.LogFormat("PlayerPosition:{0}", manager.currentPlayerPosition);
         }
-        private void updateViewerPositionInEachRow()
+        private void updateViewerPositionInEachRow(int rowId)
         {
             if (manager.isServer)
             {
-                manager.viewerPositions[screenIdToRowId(manager.currentFlaggedScreenId)] += (screenIdToPosition(manager.currentFlaggedScreenId) - manager.viewerPositions[screenIdToRowId(manager.currentFlaggedScreenId)]) / speed;
+                manager.viewerPositions[screenIdToRowId(rowId)] += (screenIdToPosition(rowId) - manager.viewerPositions[screenIdToRowId(rowId)]) / speed;
             }
         }
 
-        private void updateViewersPositionInDelayMode()
+        private void updateViewersPositionInDelayMode(int rowId)
         {
             if (manager.isServer)
             {
-                manager.viewerPositions[screenIdToRowId(manager.currentFlaggedScreenId)] += (screenIdToPosition(manager.currentFlaggedScreenId) - manager.viewerPositions[screenIdToRowId(manager.currentFlaggedScreenId)]) / speed;
+                manager.viewerPositions[screenIdToRowId(rowId)] += (screenIdToPosition(rowId) - manager.viewerPositions[screenIdToRowId(rowId)]) / speed;
                 for (int i = 1; i < manager.viewerPositions.Count; i++)
                 {
                     manager.viewerPositions[i] += ((manager.viewerPositions[0] + calculateOffsetByRowId(i) - manager.viewerPositions[i]) / (i * 16));
@@ -44,13 +44,16 @@ namespace LayeredScreen
         void Update()
         {
 
+        }
+
+        public void updatePositions(int screenId)
+        {
             if (manager.delayMode)
             {
-                updateViewersPositionInDelayMode();
+                updateViewersPositionInDelayMode(screenId);
                 return;
             }
-
-            updateViewerPositionInEachRow();
+            updateViewerPositionInEachRow(screenId);
         }
 
         private int screenIdToRowId(int screenId)
