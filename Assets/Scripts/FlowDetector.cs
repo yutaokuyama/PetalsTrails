@@ -23,7 +23,10 @@ namespace LayeredScreen
         void Update()
         {
             const float speed = 24.0f;
-            manager.viewerPositions[screenIdToRowId(manager.currentFlaggedScreenId)] += (screenIdToPosition(manager.currentFlaggedScreenId) - manager.viewerPositions[screenIdToRowId(manager.currentFlaggedScreenId)]) / speed;
+            if (manager.isServer)
+            {
+                manager.viewerPositions[screenIdToRowId(manager.currentFlaggedScreenId)] += (screenIdToPosition(manager.currentFlaggedScreenId) - manager.viewerPositions[screenIdToRowId(manager.currentFlaggedScreenId)]) / speed;
+            }
             manager.viewerVelocityDirectionOfX[screenIdToRowId(manager.currentFlaggedScreenId)] = -(screenIdToPosition(manager.currentFlaggedScreenId) - manager.viewerPositions[screenIdToRowId(manager.currentFlaggedScreenId)]).x / speed;
         }
 
