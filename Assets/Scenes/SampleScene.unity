@@ -407,6 +407,7 @@ GameObject:
   - component: {fileID: 201494711}
   - component: {fileID: 201494709}
   - component: {fileID: 201494713}
+  - component: {fileID: 201494714}
   m_Layer: 0
   m_Name: CompositeCamera
   m_TagString: Untagged
@@ -615,6 +616,20 @@ MonoBehaviour:
   _sourceCamera: {fileID: 201494711}
   _sourceTexture: {fileID: 8400000, guid: d69497af3383ff94288228ef430f19a7, type: 2}
   _resources: {fileID: 11400000, guid: f449ebbe2051c2e4d993eaa773a410de, type: 2}
+--- !u!114 &201494714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201494708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50ed37a3ddd227a49ac77f87ddf85452, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spoutSender: {fileID: 201494713}
+  manager: {fileID: 1736349532}
 --- !u!1 &400846404
 GameObject:
   m_ObjectHideFlags: 0
@@ -1600,7 +1615,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4002032992138290985, guid: b505519b5e6839c448e69ec00ddb3f93, type: 3}
       propertyPath: ignoreKeyList.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4002032992138290985, guid: b505519b5e6839c448e69ec00ddb3f93, type: 3}
       propertyPath: ignoreKeyList.Array.data[0]
@@ -1613,6 +1628,10 @@ PrefabInstance:
     - target: {fileID: 4002032992138290985, guid: b505519b5e6839c448e69ec00ddb3f93, type: 3}
       propertyPath: ignoreKeyList.Array.data[2]
       value: DeviceId
+      objectReference: {fileID: 0}
+    - target: {fileID: 4002032992138290985, guid: b505519b5e6839c448e69ec00ddb3f93, type: 3}
+      propertyPath: ignoreKeyList.Array.data[3]
+      value: SpoutSenderName
       objectReference: {fileID: 0}
     - target: {fileID: 4002032992138290986, guid: b505519b5e6839c448e69ec00ddb3f93, type: 3}
       propertyPath: m_Name
@@ -2040,6 +2059,9 @@ MonoBehaviour:
   deviceId:
     _key: DeviceId
     defaultValue: 0
+  spoutSenderName:
+    _key: SpoutSenderName
+    defaultValue: preo_pc0
   currentPlayerPosition: {x: 0, y: 0, z: 0}
   viewerPositions:
   - {x: 0, y: 0, z: 0}

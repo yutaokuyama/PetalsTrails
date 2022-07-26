@@ -10,7 +10,7 @@ namespace LayeredScreen
 {
     public class LayeredScreenManager : NetworkBehaviour
     {
-        
+
         // Start is called before the first frame update
         [SyncVar]
         public float masterClock = 0.0f;
@@ -28,7 +28,7 @@ namespace LayeredScreen
         public PrefsColor petalColor = new PrefsColor("PetalsColor");
         public PrefsFloat petalColorIntensity = new PrefsFloat("PetalColorIntensity");
         public PrefsInt deviceId = new PrefsInt("DeviceId");
-        public PrefsString spoutSenderName = new PrefsString("SpoutSenderName","preo_pc0");
+        public PrefsString spoutSenderName = new PrefsString("SpoutSenderName", "preo_pc0");
         OscServer _server;
         FlowDetector _flowDetector;
 
@@ -43,7 +43,7 @@ namespace LayeredScreen
         void Start()
         {
             startOSCServer();
-            Debug.Assert(deviceId <4);
+            Debug.Assert(deviceId < 4);
 
         }
 
@@ -55,7 +55,7 @@ namespace LayeredScreen
                "/point/piece", (string address, OscDataHandle data) =>
     {
         currentFlaggedScreenId = data.GetElementAsInt(0);
-        
+
         Debug.LogFormat("currentFlaggedScreenId:{0}", currentFlaggedScreenId);
     }
     );
@@ -72,8 +72,11 @@ namespace LayeredScreen
 
         void OnDisable()
         {
-            _server.Dispose();
-            _server = null;
+            if (_server != null)
+            {
+                _server.Dispose();
+                _server = null;
+            }
         }
     }
 }
