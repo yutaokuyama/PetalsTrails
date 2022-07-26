@@ -12,8 +12,6 @@ namespace LayeredScreen
     {
 
         // Start is called before the first frame update
-        [SyncVar]
-        public float masterClock = 0.0f;
         public int currentFlaggedScreenId = 0;
 
         public PrefsFloat offsetOfPC1 = new PrefsFloat("OffsetOfPC1");
@@ -39,14 +37,19 @@ namespace LayeredScreen
 
         //public Vector3[] viewerPositions = new Vector3[NUM_ROW];
         public SyncList<Vector3> viewerPositions = new SyncList<Vector3>();
+        public SyncList<bool> isRowEmitterEnabled = new SyncList<bool>();
+        private float[] elapsedTimesFromLastViewerAppeared = new float[NUM_ROW];
         public float[] viewerVelocityDirectionOfX = new float[NUM_ROW];
 
-
+        [SerializeField]
+        private float sleepTimeInSec = 1.5f;
         private void Awake()
         {
-            for(int i = 0; i < NUM_ROW; i++)
+            for (int i = 0; i < NUM_ROW; i++)
             {
                 viewerPositions.Add(new Vector3(0.0f, 0.0f, 0.0f));
+                isRowEmitterEnabled.Add(false);
+                elapsedTimesFromLastViewerAppeared[i] = 0.0f;
             }
         }
 
@@ -74,12 +77,34 @@ namespace LayeredScreen
     );
         }
 
+        void updateMasterEffectState()
+        {
+            int currentHandleRowId = convertScreenIDToRowId(
+                currentFlaggedScreenId);
+            for (int row = 0; row < NUM_ROW; row++)
+            {
+                if (currentHandleRowId == row)
+                {
+                    if (!isRowEmitterEnabled[row])
+                    {
+                        isRowEmitterEnabled[row] = true;
+                    }
+                    elapsedTimesFromLastViewerAppeared[row] = 0.0f;
+                }else{
+                    elapsedTimesFromLastViewerAppeared[row] += 1.0f/60.0f;
+                    if(elapsedTimesFromLastViewerAppeared[row] > sleepTimeInSec){
+                        isRowEmitterEnabled[row] = false;
+                    }
+                }
+            }
+        }
+
         // Update is called once per frame
         void Update()
         {
             if (this.isServer)
             {
-                masterClock += 1.0f;
+                updateMasterEffectState();
             }
         }
 
@@ -90,6 +115,12 @@ namespace LayeredScreen
                 _server.Dispose();
                 _server = null;
             }
+        }
+
+        private int convertScreenIDToRowId(int screenId)
+        {
+            const int NUM_COL = 12;
+            return screenId / NUM_COL;
         }
     }
 }

@@ -19,89 +19,49 @@ namespace LayeredScreen
 
         private bool isFrontRowEmitterEnabled = false;
         private bool isBackRowEmitterEnabled = false;
-
-        private float elapsedTimeFromLastViewerAppearInFrontRow = 0.0f;
-        private float elapsedTimeFromLastViewerAppearInBackRow = 0.0f;
-
-
-        [SerializeField]
-        private float sleepTimeInSec = 1.5f;
-
+        const int NUM_ROW = 8;
 
         // Start is called before the first frame update
         void Start()
         {
             EffectOfFrontRow.SendEvent("OnPlayerHide");
             EffectOfBackRow.SendEvent("OnPlayerHide");
-
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (isViewerInFronwRow(manager.currentFlaggedScreenId))
-            {
-                if (!isFrontRowEmitterEnabled)
-                {
-                    EffectOfFrontRow.SendEvent("OnPlayerVisible");
-                    isFrontRowEmitterEnabled = true;
-                }
-                elapsedTimeFromLastViewerAppearInFrontRow = 0.0f;
-            }
-            else
-            {
-                elapsedTimeFromLastViewerAppearInFrontRow += 1 / 60.0f;
-                if (elapsedTimeFromLastViewerAppearInFrontRow > sleepTimeInSec)
-                {
-                    EffectOfFrontRow.SendEvent("OnPlayerHide");
-                    isFrontRowEmitterEnabled = false;
-                }
-            }
-
-
-            if (isViewerInBackRow(manager.currentFlaggedScreenId))
-            {
-                if (!isBackRowEmitterEnabled)
-                {
-                    EffectOfBackRow.SendEvent("OnPlayerVisible");
-                    isBackRowEmitterEnabled = true;
-                }
-                elapsedTimeFromLastViewerAppearInBackRow = 0.0f;
-            }
-            else
-            {
-                elapsedTimeFromLastViewerAppearInBackRow += 1 / 60.0f;
-                if(elapsedTimeFromLastViewerAppearInBackRow > sleepTimeInSec)
-                {
-                    EffectOfBackRow.SendEvent("OnPlayerHide");
-                    isBackRowEmitterEnabled = false;
-                }
-            }
+            updateLocalStateOfFrontRow();
+            updateLocalStateOfBackRow();
         }
 
-        bool shuoldHandleScreenIDOnThisDevice(int screenID)
+        private void updateLocalStateOfFrontRow()
         {
-            const int NUM_COL = 12;
-            int rowId = screenID / NUM_COL;
-            return (manager.deviceId * 2 == rowId) || ((manager.deviceId * 2 + 1) == rowId);
+            bool isGlobalStateChanged = isFrontRowEmitterEnabled != manager.isRowEmitterEnabled[manager.deviceId * 2];
+            if (!isGlobalStateChanged)
+            {
+                return;
+            }
+
+            isFrontRowEmitterEnabled = manager.isRowEmitterEnabled[manager.deviceId * 2];
+            EffectOfFrontRow.SendEvent(getEffectEmitterEventName(isFrontRowEmitterEnabled));
         }
 
-        bool isViewerInFronwRow(int screenId)
+        private void updateLocalStateOfBackRow()
         {
-            int rowId = convertScreenIDToRowId(screenId);
-            return rowId == (manager.deviceId * 2);
+            bool isGlobalStateChanged = isBackRowEmitterEnabled != manager.isRowEmitterEnabled[manager.deviceId * 2 + 1];
+            if (!isGlobalStateChanged)
+            {
+                return;
+            }
+
+            isBackRowEmitterEnabled = manager.isRowEmitterEnabled[manager.deviceId * 2 + 1];
+            EffectOfBackRow.SendEvent(getEffectEmitterEventName(isBackRowEmitterEnabled));
         }
 
-        bool isViewerInBackRow(int screenId)
+        private string getEffectEmitterEventName(bool isEnabled)
         {
-            int rowId = convertScreenIDToRowId(screenId);
-            return rowId == ((manager.deviceId * 2) +1);
-        }
-
-        private int convertScreenIDToRowId(int screenId)
-        {
-            const int NUM_COL = 12;
-            return screenId / NUM_COL;
+            return isEnabled ? "OnPlayerVisible" : "OnPlayerHide";
         }
     }
 }

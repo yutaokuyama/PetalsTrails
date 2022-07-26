@@ -36,7 +36,6 @@ namespace LayeredScreen
                 for (int i = 1; i < manager.viewerPositions.Count; i++)
                 {
                     manager.viewerPositions[i] += ((manager.viewerPositions[0] + calculateOffsetByRowId(i) - manager.viewerPositions[i]) / (i * 16));
-
                 }
             }
         }
