@@ -46,8 +46,8 @@ namespace LayeredScreen
             Vector3 rowOffset = new Vector3(0.0f, 0.0f, 0.0f);
             rowOffset.x = isBackRow ? 10.0f : 0.0f;
 
-
-            return new Vector3(colId * INTERBAL_COL - 8.0f / 2.0f, 0.0f, 0.0f) + rowOffset;
+            float offsetX = INTERBAL_COL * 0.5f;
+            return new Vector3(colId * INTERBAL_COL - 8.0f / 2.0f + offsetX, 0.0f, 0.0f) + rowOffset;
 
         }
     }
