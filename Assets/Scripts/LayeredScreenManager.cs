@@ -29,6 +29,7 @@ namespace LayeredScreen
         public PrefsFloat petalColorIntensity = new PrefsFloat("PetalColorIntensity");
         public PrefsInt deviceId = new PrefsInt("DeviceId");
         public PrefsString spoutSenderName = new PrefsString("SpoutSenderName", "preo_pc0");
+        public PrefsBool delayMode = new PrefsBool("DelayMode", false);
         OscServer _server;
         FlowDetector _flowDetector;
 
