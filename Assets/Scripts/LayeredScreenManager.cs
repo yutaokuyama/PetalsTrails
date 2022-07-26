@@ -90,9 +90,12 @@ namespace LayeredScreen
                         isRowEmitterEnabled[row] = true;
                     }
                     elapsedTimesFromLastViewerAppeared[row] = 0.0f;
-                }else{
-                    elapsedTimesFromLastViewerAppeared[row] += 1.0f/60.0f;
-                    if(elapsedTimesFromLastViewerAppeared[row] > sleepTimeInSec){
+                }
+                else
+                {
+                    elapsedTimesFromLastViewerAppeared[row] += 1.0f / 60.0f;
+                    if (elapsedTimesFromLastViewerAppeared[row] > sleepTimeInSec)
+                    {
                         isRowEmitterEnabled[row] = false;
                     }
                 }

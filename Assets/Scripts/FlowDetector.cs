@@ -39,8 +39,6 @@ namespace LayeredScreen
                 }
             }
         }
-       
-        
 
         // Update is called once per frame
         void Update()
@@ -49,13 +47,11 @@ namespace LayeredScreen
             if (manager.delayMode)
             {
                 updateViewersPositionInDelayMode();
-                return; 
+                return;
             }
 
             updateViewerPositionInEachRow();
         }
-
-
 
         private int screenIdToRowId(int screenId)
         {
@@ -69,7 +65,6 @@ namespace LayeredScreen
             int rowId = screenIdToRowId(screenId);
             int colId = screenId % NUM_COL;
 
-            const int ROW_WIDTH = 8;
             float INTERBAL_COL = 8.0f / NUM_COL;
 
             bool isBackRow = (rowId % 2 == 1);
