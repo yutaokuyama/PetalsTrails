@@ -41,8 +41,7 @@ namespace LayeredScreen
         private float[] elapsedTimesFromLastViewerAppeared = new float[NUM_ROW];
         public float[] viewerVelocityDirectionOfX = new float[NUM_ROW];
 
-        [SerializeField]
-        private float sleepTimeInSec = 1.5f;
+        private PrefsFloat sleepTimeInSec = new PrefsFloat("effectSleepTimeInSec", 1.5f);
         private void Awake()
         {
             for (int i = 0; i < NUM_ROW; i++)
@@ -81,49 +80,88 @@ namespace LayeredScreen
         {
             int currentHandleRowId = convertScreenIDToRowId(
                 currentFlaggedScreenId);
-            for (int row = 0; row < NUM_ROW; row++)
+            if (delayMode)
             {
-                if (currentHandleRowId == row)
+                updateMasterEffectStateInDelayMode(currentHandleRowId);
+            }
+            else
+            {
+                updateMasterEffectStateInEachRowMode(currentHandleRowId);
+            }
+        }
+
+
+        void updateMasterEffectStateInDelayMode(int currentHandleRowId)
+        {
+            bool isCurrentHandleRowIdInFirstRow = currentHandleRowId == 0;
+
+            if (isCurrentHandleRowIdInFirstRow)
+            {
+                if (!isRowEmitterEnabled[0])
                 {
-                    if (!isRowEmitterEnabled[row])
-                    {
-                        isRowEmitterEnabled[row] = true;
-                    }
-                    elapsedTimesFromLastViewerAppeared[row] = 0.0f;
+                    isRowEmitterEnabled[0] = true;
                 }
-                else
+                elapsedTimesFromLastViewerAppeared[0] = 0.0f;
+            }
+            else
+            {
+                elapsedTimesFromLastViewerAppeared[0] += 1.0f / 60.0f;
+                if (elapsedTimesFromLastViewerAppeared[0] > sleepTimeInSec.Get())
                 {
-                    elapsedTimesFromLastViewerAppeared[row] += 1.0f / 60.0f;
-                    if (elapsedTimesFromLastViewerAppeared[row] > sleepTimeInSec)
-                    {
-                        isRowEmitterEnabled[row] = false;
-                    }
+                    isRowEmitterEnabled[0] = false;
                 }
             }
-        }
 
-        // Update is called once per frame
-        void Update()
-        {
-            if (this.isServer)
-            {
-                updateMasterEffectState();
+            for(int row = 1;row<NUM_ROW;row++){
+                isRowEmitterEnabled[row] = isRowEmitterEnabled[0];
             }
         }
-
-        void OnDisable()
+    
+    void updateMasterEffectStateInEachRowMode(int currentHandleRowId)
+    {
+        for (int row = 0; row < NUM_ROW; row++)
         {
-            if (_server != null)
+            if (currentHandleRowId == row)
             {
-                _server.Dispose();
-                _server = null;
+                if (!isRowEmitterEnabled[row])
+                {
+                    isRowEmitterEnabled[row] = true;
+                }
+                elapsedTimesFromLastViewerAppeared[row] = 0.0f;
             }
-        }
-
-        private int convertScreenIDToRowId(int screenId)
-        {
-            const int NUM_COL = 12;
-            return screenId / NUM_COL;
+            else
+            {
+                elapsedTimesFromLastViewerAppeared[row] += 1.0f / 60.0f;
+                if (elapsedTimesFromLastViewerAppeared[row] > sleepTimeInSec.Get())
+                {
+                    isRowEmitterEnabled[row] = false;
+                }
+            }
         }
     }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (this.isServer)
+        {
+            updateMasterEffectState();
+        }
+    }
+
+    void OnDisable()
+    {
+        if (_server != null)
+        {
+            _server.Dispose();
+            _server = null;
+        }
+    }
+
+    private int convertScreenIDToRowId(int screenId)
+    {
+        const int NUM_COL = 12;
+        return screenId / NUM_COL;
+    }
+}
 }
