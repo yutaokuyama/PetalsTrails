@@ -25,6 +25,8 @@ namespace LayeredScreen
             if (manager.isServer)
             {
                 manager.viewerPositions[screenIdToRowId(rowId)] += (screenIdToPosition(rowId) - manager.viewerPositions[screenIdToRowId(rowId)]) / speed;
+                manager.slowerViewerPositions[screenIdToRowId(rowId)] += (screenIdToPosition(rowId) - manager.slowerViewerPositions[screenIdToRowId(rowId)]) / (speed*1.5f);
+
             }
         }
 
@@ -32,10 +34,14 @@ namespace LayeredScreen
         {
             if (manager.isServer)
             {
-                manager.viewerPositions[screenIdToRowId(rowId)] += (screenIdToPosition(rowId) - manager.viewerPositions[screenIdToRowId(rowId)]) / speed;
+                manager.viewerPositions[screenIdToRowId(rowId)] += (screenIdToPosition(rowId) - manager.viewerPositions[screenIdToRowId(rowId)]) / (speed*1.2f);
+                manager.slowerViewerPositions[screenIdToRowId(rowId)] += (screenIdToPosition(rowId) - manager.slowerViewerPositions[screenIdToRowId(rowId)]) / (speed * 2.0f);
+
                 for (int i = 1; i < manager.viewerPositions.Count; i++)
                 {
-                    manager.viewerPositions[i] += ((manager.viewerPositions[0] + calculateOffsetByRowId(i) - manager.viewerPositions[i]) / (i * 16));
+                    manager.viewerPositions[i] += ((manager.viewerPositions[0] + calculateOffsetByRowId(i) - manager.viewerPositions[i]) / (speed * i*1.2f));
+                    manager.slowerViewerPositions[i] += ((manager.slowerViewerPositions[0] + calculateOffsetByRowId(i) - manager.slowerViewerPositions[i]) / (speed * i * 2f));
+
                 }
             }
         }

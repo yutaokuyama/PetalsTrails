@@ -25,6 +25,7 @@ namespace LayeredScreen
             int rowId = trailEffect.GetInt("RowId") + manager.deviceId * 2;
 
             trailEffect.SetVector3("WalkerOffset", manager.viewerPositions[rowId]);
+            trailEffect.SetVector3("SlowerWalkerOffset", manager.slowerViewerPositions[rowId]);
             trailEffect.SetFloat("VIewerDirection", manager.viewerVelocityDirectionOfX[rowId]);
             trailEffect.SetVector4("TrailColor", manager.trailColor.Get());
             trailEffect.SetFloat("TrailColorIntensity", manager.trailColorIntensity.Get());

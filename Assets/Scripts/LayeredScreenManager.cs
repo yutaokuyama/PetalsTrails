@@ -39,8 +39,9 @@ namespace LayeredScreen
         const int NUM_ROW = 8;
         const int NUM_COL = 12;
 
-        //public Vector3[] viewerPositions = new Vector3[NUM_ROW];
         public SyncList<Vector3> viewerPositions = new SyncList<Vector3>();
+        public SyncList<Vector3> slowerViewerPositions = new SyncList<Vector3>();
+
         public SyncList<bool> isRowEmitterEnabled = new SyncList<bool>();
         private float[] elapsedTimesFromLastViewerAppeared = new float[NUM_ROW];
         public float[] viewerVelocityDirectionOfX = new float[NUM_ROW];
@@ -51,6 +52,8 @@ namespace LayeredScreen
             for (int i = 0; i < NUM_ROW; i++)
             {
                 viewerPositions.Add(new Vector3(0.0f, 0.0f, 0.0f));
+                slowerViewerPositions.Add(new Vector3(0.0f, 0.0f, 0.0f));
+
                 isRowEmitterEnabled.Add(false);
                 elapsedTimesFromLastViewerAppeared[i] = 0.0f;
             }
