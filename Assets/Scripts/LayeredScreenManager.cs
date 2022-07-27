@@ -25,8 +25,12 @@ namespace LayeredScreen
         public PrefsColor petalColor = new PrefsColor("PetalsColor");
         public PrefsFloat petalColorIntensity = new PrefsFloat("PetalColorIntensity");
         public PrefsInt deviceId = new PrefsInt("DeviceId");
-        public PrefsString spoutSenderName = new PrefsString("SpoutSenderName", "preo_pc0");
+        public PrefsString spoutSenderName = new PrefsString("SpoutSenderName", "preo");
         public PrefsBool delayMode = new PrefsBool("DelayMode", false);
+
+        public PrefsVector2 TrailLifeTime = new PrefsVector2("TrailLifeTimeRange", new Vector2(0.5f, 4.0f));
+        public PrefsFloat TrailWidth = new PrefsFloat("TrailWidth",0.03f);
+        public PrefsInt NumTrail = new PrefsInt("NumTrail", 200);
         OscServer _server;
         [SerializeField]
         private FlowDetector _flowDetector;

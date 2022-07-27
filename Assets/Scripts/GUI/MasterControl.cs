@@ -24,6 +24,9 @@ namespace LayeredScreen
         public Element CreateElement(LabelElement _)
         {
             return UI.Column(
+                manager.NumTrail.CreateElement(),
+                manager.TrailLifeTime.CreateElement(),
+                manager.TrailWidth.CreateElement(),
                 manager.trailColor.CreateElement(),
                 manager.trailColorIntensity.CreateElement(),
                 manager.petalColor.CreateElement(),
