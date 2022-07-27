@@ -14,10 +14,7 @@ namespace LayeredScreen
         // Start is called before the first frame update
         public int[] flaggedScreenIds = new int[256];
         private int receivedScreenIdNumInOneRenderLoop = 0;
-
-
-        public PrefsFloat offsetOfPC1 = new PrefsFloat("OffsetOfPC1");
-        public PrefsInt OSCPort = new PrefsInt("OSCPort");
+        public PrefsInt OSCPort = new PrefsInt("OSCPort",6666);
 
         public PrefsColor trailColor = new PrefsColor("TrailColor");
         public PrefsFloat trailColorIntensity = new PrefsFloat("TrailColorIntensity");

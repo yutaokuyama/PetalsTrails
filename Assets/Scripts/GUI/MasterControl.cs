@@ -24,8 +24,6 @@ namespace LayeredScreen
         public Element CreateElement(LabelElement _)
         {
             return UI.Column(
-                manager.OSCPort.CreateElement(),
-                manager.offsetOfPC1.CreateElement(),
                 manager.trailColor.CreateElement(),
                 manager.trailColorIntensity.CreateElement(),
                 manager.petalColor.CreateElement(),
