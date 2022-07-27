@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.781698, g: 0.7185867, b: 0.63411725, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -640,6 +640,7 @@ GameObject:
   m_Component:
   - component: {fileID: 400846406}
   - component: {fileID: 400846405}
+  - component: {fileID: 400846407}
   m_Layer: 0
   m_Name: PostProcesses
   m_TagString: Untagged
@@ -679,6 +680,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &400846407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400846404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0708f8778b015544b0e49122bd130f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  postProsecces: {fileID: 11400000, guid: 04813d961e8ed1f46b6163f0ccdaeba2, type: 2}
+  manager: {fileID: 1736349532}
 --- !u!1 &449540623
 GameObject:
   m_ObjectHideFlags: 0
@@ -1234,7 +1249,7 @@ MonoBehaviour:
   clearDepth: 1
   volumeLayerMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 0
   volumeAnchorOverride: {fileID: 0}
   antialiasing: 0
   SMAAQuality: 2
@@ -2143,6 +2158,15 @@ MonoBehaviour:
   NumTrail:
     _key: NumTrail
     defaultValue: 200
+  bloomIntensity:
+    _key: BloomIntensity
+    defaultValue: 0.9
+  bloomThresh:
+    _key: BloomThresh
+    defaultValue: 0.9
+  aquaOpacity:
+    _key: AquaOpacity
+    defaultValue: 0.4
   _flowDetector: {fileID: 1885341659}
   currentPlayerPosition: {x: 0, y: 0, z: 0}
   viewerVelocityDirectionOfX:
