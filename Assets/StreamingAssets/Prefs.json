@@ -1,0 +1,84 @@
+{
+    "list": [
+        {
+            "key": "OSCPORT",
+            "value": "{\"value\":9010}"
+        },
+        {
+            "key": "MasterClock",
+            "value": "{\"value\":26.270505905151368}"
+        },
+        {
+            "key": "OffsetOfPC1",
+            "value": "{\"value\":0.0}"
+        },
+        {
+            "key": "OSCPort",
+            "value": "{\"value\":6667}"
+        },
+        {
+            "key": "TrailColor",
+            "value": "{\"r\":0.00784322526305914,\"g\":0.5764706134796143,\"b\":0.0,\"a\":0.0}"
+        },
+        {
+            "key": "PefalsColor",
+            "value": "{\"r\":1.0,\"g\":0.0,\"b\":0.0,\"a\":0.0}"
+        },
+        {
+            "key": "LeafColor",
+            "value": "{\"r\":0.05476231127977371,\"g\":0.6415010690689087,\"b\":0.0,\"a\":1.0}"
+        },
+        {
+            "key": "TrailColorIntensity",
+            "value": "{\"value\":0.6000000238418579}"
+        },
+        {
+            "key": "LeafColorIntensity",
+            "value": "{\"value\":1.0}"
+        },
+        {
+            "key": "PetalColorIntensity",
+            "value": "{\"value\":1.0}"
+        },
+        {
+            "key": "DeviceId",
+            "value": "{\"value\":0}"
+        },
+        {
+            "key": "SpoutSenderName",
+            "value": "{\"value\":\"preo\"}"
+        },
+        {
+            "key": "DelayMode",
+            "value": "{\"value\":true}"
+        },
+        {
+            "key": "effectSleepTimeInSec",
+            "value": "{\"value\":1.5}"
+        },
+        {
+            "key": "TrailLifeTimeRange",
+            "value": "{\"x\":0.5,\"y\":4.0}"
+        },
+        {
+            "key": "NumTrail",
+            "value": "{\"value\":2}"
+        },
+        {
+            "key": "TrailWidth",
+            "value": "{\"value\":0.029999999329447748}"
+        },
+        {
+            "key": "AquaOpacity",
+            "value": "{\"value\":0.10000000149011612}"
+        },
+        {
+            "key": "BloomIntensity",
+            "value": "{\"value\":0.20000000298023225}"
+        },
+        {
+            "key": "BloomThresh",
+            "value": "{\"value\":0.10000000149011612}"
+        }
+    ]
+}
