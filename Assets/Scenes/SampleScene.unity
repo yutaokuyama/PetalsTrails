@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   platform: 12
-  _path: C:\teamLab\LayeredScreen\PrefsGUI\Prefs
+  _path: '%dataPath%/StreamingAssets '
 --- !u!4 &171459214
 Transform:
   m_ObjectHideFlags: 0
@@ -212,9 +212,9 @@ GameObject:
   - component: {fileID: 194364763}
   - component: {fileID: 194364762}
   - component: {fileID: 194364761}
-  - component: {fileID: 194364765}
-  - component: {fileID: 194364766}
   - component: {fileID: 194364768}
+  - component: {fileID: 194364766}
+  - component: {fileID: 194364765}
   m_Layer: 6
   m_Name: TrailsInFrontRow
   m_TagString: Untagged
@@ -362,7 +362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdafc37f32b176349b1684c4455b98e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ExecuteInEditor: 1
+  m_ExecuteInEditor: 0
   m_Bindings:
   - {fileID: 194364766}
   m_VisualEffect: {fileID: 194364762}
@@ -395,6 +395,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trailEffect: {fileID: 194364762}
   manager: {fileID: 1736349532}
+  walkerTransform: {fileID: 1457935552}
 --- !u!1 &201494708
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,7 +1140,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 782232796}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -1.595}
+  m_LocalPosition: {x: 0, y: 0.5, z: -1.595}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1583,11 +1584,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2656431786303760210, guid: 44c8b5c4c10739a47bcd57fbdc4fd94c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 44c8b5c4c10739a47bcd57fbdc4fd94c, type: 3}
       propertyPath: m_Name
       value: ViewerInFrontRow
+      objectReference: {fileID: 0}
+    - target: {fileID: 1082271958561512970, guid: 44c8b5c4c10739a47bcd57fbdc4fd94c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5465940246521907071, guid: 44c8b5c4c10739a47bcd57fbdc4fd94c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1635,6 +1640,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6148737315974723067, guid: 44c8b5c4c10739a47bcd57fbdc4fd94c, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148737315974723067, guid: 44c8b5c4c10739a47bcd57fbdc4fd94c, type: 3}
+      propertyPath: m_UpdateWhenOffscreen
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1788,9 +1797,9 @@ GameObject:
   - component: {fileID: 1562900620}
   - component: {fileID: 1562900625}
   - component: {fileID: 1562900624}
-  - component: {fileID: 1562900623}
-  - component: {fileID: 1562900622}
   - component: {fileID: 1562900621}
+  - component: {fileID: 1562900622}
+  - component: {fileID: 1562900623}
   m_Layer: 6
   m_Name: TrailsInBackRow
   m_TagString: Untagged
@@ -1827,6 +1836,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trailEffect: {fileID: 1562900625}
   manager: {fileID: 1736349532}
+  walkerTransform: {fileID: 2010173194}
 --- !u!114 &1562900622
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -1854,7 +1864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdafc37f32b176349b1684c4455b98e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ExecuteInEditor: 1
+  m_ExecuteInEditor: 0
   m_Bindings:
   - {fileID: 1562900622}
   m_VisualEffect: {fileID: 1562900625}
@@ -2479,7 +2489,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1957460541}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10, y: 1, z: -1.595}
+  m_LocalPosition: {x: 10, y: 0.5, z: -1.595}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2756,7 +2766,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -2656431786303760210, guid: 44c8b5c4c10739a47bcd57fbdc4fd94c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 44c8b5c4c10739a47bcd57fbdc4fd94c, type: 3}
       propertyPath: m_Name
@@ -2765,6 +2775,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 44c8b5c4c10739a47bcd57fbdc4fd94c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3853268898807207900, guid: 44c8b5c4c10739a47bcd57fbdc4fd94c, type: 3}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 44c8b5c4c10739a47bcd57fbdc4fd94c, type: 3}
       propertyPath: m_Enabled
@@ -2784,6 +2798,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6148737315974723067, guid: 44c8b5c4c10739a47bcd57fbdc4fd94c, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148737315974723067, guid: 44c8b5c4c10739a47bcd57fbdc4fd94c, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6148737315974723067, guid: 44c8b5c4c10739a47bcd57fbdc4fd94c, type: 3}
+      propertyPath: m_UpdateWhenOffscreen
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
