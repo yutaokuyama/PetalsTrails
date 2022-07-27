@@ -19,7 +19,7 @@ namespace LayeredScreen
         {
             Debug.Log("Create Element");
             return UI.Window(
-                "PrefsGUI - RosettaUI",
+                "Controls",
                 UI.WindowLauncher<MasterControl>("MasterControl")
             ).SetPosition(position);
         }

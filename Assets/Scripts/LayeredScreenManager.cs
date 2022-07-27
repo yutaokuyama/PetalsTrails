@@ -31,6 +31,13 @@ namespace LayeredScreen
         public PrefsVector2 TrailLifeTime = new PrefsVector2("TrailLifeTimeRange", new Vector2(0.5f, 4.0f));
         public PrefsFloat TrailWidth = new PrefsFloat("TrailWidth",0.03f);
         public PrefsInt NumTrail = new PrefsInt("NumTrail", 200);
+
+        public PrefsFloat bloomIntensity = new PrefsFloat("BloomIntensity", 0.9f);
+        public PrefsFloat bloomThresh = new PrefsFloat("BloomThresh", 0.9f);
+
+        public PrefsFloat aquaOpacity = new PrefsFloat("AquaOpacity", 0.4f);
+
+
         OscServer _server;
         [SerializeField]
         private FlowDetector _flowDetector;
