@@ -188,6 +188,10 @@ namespace LayeredScreen
 
         }
 
+        int parseStringScreenIdToNumberId(string receivedScreenId)
+        {
+            return int.Parse(receivedScreenId.Split('-')[1]);
+        }
         void startOSCServer()
         {
             _server = new OscServer(OSCPort); // Port number
@@ -195,7 +199,12 @@ namespace LayeredScreen
             _server.MessageDispatcher.AddCallback(
                "/point/piece", (string address, OscDataHandle data) =>
     {
-        flaggedScreenIds[receivedScreenIdNumInOneRenderLoop] = data.GetElementAsInt(0);
+        string receivedScreenId = data.GetElementAsString(0);
+
+/*        Debug.LogFormat("receivedScreenId:{0}", receivedScreenId);
+        Debug.LogFormat("Parsed:{0}", );
+*/
+        flaggedScreenIds[receivedScreenIdNumInOneRenderLoop] = parseStringScreenIdToNumberId(receivedScreenId);
         receivedScreenIdNumInOneRenderLoop = receivedScreenIdNumInOneRenderLoop + 1;
     }
     );
