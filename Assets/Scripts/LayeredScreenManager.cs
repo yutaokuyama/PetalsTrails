@@ -16,7 +16,6 @@ namespace LayeredScreen
         // Start is called before the first frame update
         public int[] flaggedScreenIds = new int[256];
         private int receivedScreenIdNumInOneRenderLoop = 0;
-        private int OSCPort = 6666;
 
         public PrefsColor trailMainColor = new PrefsColor("TrailMainColor");
         public PrefsColor trailSubColor0 = new PrefsColor("TrailSubColor0");
@@ -70,7 +69,7 @@ namespace LayeredScreen
         public PrefsColor edgeColor = new PrefsColor("RecolorEdgeColor", Color.black);
         public PrefsFloat edgeThresh = new PrefsFloat("RecolorEdgeThresh", 0.5f);
         public PrefsFloat edgeContrast = new PrefsFloat("RecolorContrast", 1.0f);
-
+        public PrefsInt OSCPort = new PrefsInt("OSCPort", 6666);
         
         public 
         
@@ -198,7 +197,7 @@ namespace LayeredScreen
         }
         void startOSCServer()
         {
-            _server = new OscServer(OSCPort); // Port number
+            _server = new OscServer(OSCPort.Get()); // Port number
             Debug.LogFormat("Server listen on PORT {0}", OSCPort);
             _server.MessageDispatcher.AddCallback(
                "/point/piece", (string address, OscDataHandle data) =>

@@ -14,7 +14,7 @@
         },
         {
             "key": "OSCPort",
-            "value": "{\"value\":6667}"
+            "value": "{\"value\":6666}"
         },
         {
             "key": "TrailColor",
@@ -131,6 +131,18 @@
         {
             "key": "TrailEmitRate",
             "value": "{\"value\":15}"
+        },
+        {
+            "key": "RecolorEdgeColor",
+            "value": "{\"r\":0.0,\"g\":0.0,\"b\":0.0,\"a\":1.0}"
+        },
+        {
+            "key": "RecolorEdgeThresh",
+            "value": "{\"value\":0.5}"
+        },
+        {
+            "key": "RecolorContrast",
+            "value": "{\"value\":1.0}"
         }
     ]
 }
