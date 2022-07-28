@@ -26,6 +26,24 @@ namespace LayeredScreen
         private GradientColorKey[] trailColorKey;
         private GradientAlphaKey[] trailColorAlphaKey;
 
+        public PrefsColor leafMainColor = new PrefsColor("LeafMainColor");
+        public PrefsColor leafSubColor0 = new PrefsColor("LeafSubColor0");
+        public PrefsColor leafSubColor1 = new PrefsColor("LeafSubColor1");
+
+        public Gradient leafColorGradient = new Gradient();
+        private GradientColorKey[] leafColorKey;
+        private GradientAlphaKey[] leafColorAlphaKey;
+
+        public PrefsColor petalMainColor = new PrefsColor("PetalMainColor");
+        public PrefsColor petalSubColor0 = new PrefsColor("PetalSubColor0");
+        public PrefsColor petalSubColor1 = new PrefsColor("PetalSubColor1");
+
+        public Gradient petalColorGradient = new Gradient();
+        private GradientColorKey[] petalColorKey;
+        private GradientAlphaKey[] petalColorAlphaKey;
+
+
+
         public PrefsFloat trailColorIntensity = new PrefsFloat("TrailColorIntensity");
 
         public PrefsColor leafColor = new PrefsColor("LeafColor");
@@ -65,7 +83,7 @@ namespace LayeredScreen
         public float[] viewerVelocityDirectionOfX = new float[NUM_ROW];
 
         private PrefsFloat sleepTimeInSec = new PrefsFloat("effectSleepTimeInSec", 1.5f);
-         private void udpateTrailColorGradient()
+         private void updateTrailColorGradient()
         {
             // Populate the color keys at the relative time 0 and 1 (0 and 100%)
             trailColorKey = new GradientColorKey[5];
@@ -92,6 +110,56 @@ namespace LayeredScreen
 
         }
 
+        private void updateLeafColorGradient()
+        {
+            // Populate the color keys at the relative time 0 and 1 (0 and 100%)
+            leafColorKey = new GradientColorKey[5];
+            leafColorKey[0].color = leafMainColor.Get();
+            leafColorKey[0].time = 0.5f;
+            leafColorKey[1].color = leafSubColor0.Get();
+            leafColorKey[1].time = 0.0f;
+            leafColorKey[2].color = leafSubColor0.Get();
+            leafColorKey[2].time = 1.0f;
+            leafColorKey[3].color = leafMainColor.Get();
+            leafColorKey[3].time = 0.75f;
+            leafColorKey[4].color = leafMainColor.Get();
+            leafColorKey[4].time = 0.25f;
+            // Populate the alpha  keys at relative time 0 and 1  (0 and 100%)
+            leafColorAlphaKey = new GradientAlphaKey[3];
+            leafColorAlphaKey[0].time = 0.0f;
+            leafColorAlphaKey[1].alpha = 1.0f;
+            leafColorAlphaKey[1].time = 1.0f;
+            leafColorAlphaKey[2].alpha = 1.0f;
+            leafColorAlphaKey[2].time = 0.5f;
+
+            leafColorGradient.SetKeys(leafColorKey, leafColorAlphaKey);
+        }
+
+        private void updatePetalColorGradient()
+        {
+            // Populate the color keys at the relative time 0 and 1 (0 and 100%)
+            petalColorKey = new GradientColorKey[5];
+            petalColorKey[0].color = petalMainColor.Get();
+            petalColorKey[0].time = 0.5f;
+            petalColorKey[1].color = petalSubColor0.Get();
+            petalColorKey[1].time = 0.0f;
+            petalColorKey[2].color = petalSubColor0.Get();
+            petalColorKey[2].time = 1.0f;
+            petalColorKey[3].color = petalMainColor.Get();
+            petalColorKey[3].time = 0.75f;
+            petalColorKey[4].color = petalMainColor.Get();
+            petalColorKey[4].time = 0.25f;
+            // Populate the alpha  keys at relative time 0 and 1  (0 and 100%)
+            petalColorAlphaKey = new GradientAlphaKey[3];
+            petalColorAlphaKey[0].time = 0.0f;
+            petalColorAlphaKey[1].alpha = 1.0f;
+            petalColorAlphaKey[1].time = 1.0f;
+            petalColorAlphaKey[2].alpha = 1.0f;
+            petalColorAlphaKey[2].time = 0.5f;
+
+            petalColorGradient.SetKeys(petalColorKey, petalColorAlphaKey);
+        }
+
         private void Awake()
         {
             for (int i = 0; i < NUM_ROW; i++)
@@ -102,7 +170,8 @@ namespace LayeredScreen
                 isRowEmitterEnabled.Add(false);
                 elapsedTimesFromLastViewerAppeared[i] = 0.0f;
             }
-            udpateTrailColorGradient();
+            updateTrailColorGradient();
+            updateLeafColorGradient();
 
         }
 
@@ -206,7 +275,9 @@ namespace LayeredScreen
                 receivedScreenIdNumInOneRenderLoop = 0;
             }
             //XXX:adhoc work around
-            udpateTrailColorGradient();
+            updateTrailColorGradient();
+            updateLeafColorGradient();
+            updatePetalColorGradient();
         }
 
         void OnDisable()
