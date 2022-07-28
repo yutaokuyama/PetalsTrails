@@ -29,12 +29,16 @@ namespace LayeredScreen
             }
         }
 
-        private void updateViewersPositionInDelayMode(int rowId)
+        private void updateViewersPositionInDelayMode(int screenID)
         {
             if (manager.isServer)
             {
-                manager.viewerPositions[screenIdToRowId(rowId)] += (screenIdToPosition(rowId) - manager.viewerPositions[screenIdToRowId(rowId)]) / (manager.viewerMoveSpeed);
-                manager.slowerViewerPositions[screenIdToRowId(rowId)] += (screenIdToPosition(rowId) - manager.slowerViewerPositions[screenIdToRowId(rowId)]) / (manager.viewerMoveSpeed * 1.5f);
+                int rowId = screenIdToRowId(screenID);
+                if(rowId != 0){
+                    return;
+                }
+                manager.viewerPositions[rowId] += (screenIdToPosition(screenID) - manager.viewerPositions[rowId]) / (manager.viewerMoveSpeed);
+                manager.slowerViewerPositions[rowId] += (screenIdToPosition(screenID) - manager.slowerViewerPositions[rowId]) / (manager.viewerMoveSpeed * 1.5f);
 
                 for (int i = 1; i < manager.viewerPositions.Count; i++)
                 {

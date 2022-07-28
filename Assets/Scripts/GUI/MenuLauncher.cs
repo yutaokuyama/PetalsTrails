@@ -4,7 +4,6 @@ using RosettaUI;
 
 using PrefsGUI;
 
-using RosettaUI;
 using PrefsGUI.RosettaUI;
 
 namespace LayeredScreen

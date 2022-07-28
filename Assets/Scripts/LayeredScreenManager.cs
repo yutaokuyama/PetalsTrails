@@ -221,7 +221,9 @@ namespace LayeredScreen
             int currentHandleRowId = convertScreenIDToRowId(screenId);
             if (delayMode)
             {
+                if(currentHandleRowId == 0){
                 updateMasterEffectStateInDelayMode(currentHandleRowId);
+                }
             }
             else
             {
