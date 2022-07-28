@@ -46,11 +46,12 @@ namespace LayeredScreen
 
         public PrefsFloat trailColorIntensity = new PrefsFloat("TrailColorIntensity");
 
-        public PrefsColor leafColor = new PrefsColor("LeafColor");
         public PrefsFloat leafColorIntensity = new PrefsFloat("LeafColorIntensity");
+        public PrefsVector2 leafSizeMinMax = new PrefsVector2("LeafSizeMinMax", new Vector2(0.1f, 1.3f));
 
-        public PrefsColor petalColor = new PrefsColor("PetalsColor");
         public PrefsFloat petalColorIntensity = new PrefsFloat("PetalColorIntensity");
+        public PrefsVector2 petalSizeMinMax = new PrefsVector2("PetalSizeMinMax", new Vector2(0.1f, 1.3f));
+
         public PrefsInt deviceId = new PrefsInt("DeviceId");
         public PrefsString spoutSenderName = new PrefsString("SpoutSenderName", "preo");
         public PrefsBool delayMode = new PrefsBool("DelayMode", false);
