@@ -11,19 +11,14 @@ using PrefsGUI.RosettaUI;
 
 namespace LayeredScreen
 {
-    public class MasterControl : MonoBehaviour
-        ,IElementCreator
+    public class ObjectParams : MonoBehaviour
+        , IElementCreator
     {
-        public LayeredScreenManager manager; 
-
-        void Update()
-        {
-            
-        }
+        public LayeredScreenManager manager;
 
         public Element CreateElement(LabelElement _)
         {
-            return UI.Column(                                
+            return UI.Column(
                 manager.trailEmitRate.CreateElement(),
                 manager.TrailLifeTime.CreateElement(),
                 manager.TrailWidthMinMax.CreateElement(),
