@@ -8,6 +8,8 @@ using System.Linq;
 
 namespace LayeredScreen
 {
+
+    
     public class LayeredScreenManager : NetworkBehaviour
     {
 
@@ -16,7 +18,14 @@ namespace LayeredScreen
         private int receivedScreenIdNumInOneRenderLoop = 0;
         private int OSCPort = 6666;
 
-        public PrefsColor trailColor = new PrefsColor("TrailColor");
+        public PrefsColor trailMainColor = new PrefsColor("TrailMainColor");
+        public PrefsColor trailSubColor0 = new PrefsColor("TrailSubColor0");
+        public PrefsColor trailSubColor1 = new PrefsColor("TrailSubColor1");
+
+        public Gradient trailColorGradient = new Gradient();
+        private GradientColorKey[] trailColorKey;
+        private GradientAlphaKey[] trailColorAlphaKey;
+
         public PrefsFloat trailColorIntensity = new PrefsFloat("TrailColorIntensity");
 
         public PrefsColor leafColor = new PrefsColor("LeafColor");
@@ -37,7 +46,9 @@ namespace LayeredScreen
 
         public PrefsFloat aquaOpacity = new PrefsFloat("AquaOpacity", 0.4f);
 
-
+        
+        
+        
         OscServer _server;
         [SerializeField]
         private FlowDetector _flowDetector;
@@ -54,6 +65,33 @@ namespace LayeredScreen
         public float[] viewerVelocityDirectionOfX = new float[NUM_ROW];
 
         private PrefsFloat sleepTimeInSec = new PrefsFloat("effectSleepTimeInSec", 1.5f);
+         private void udpateTrailColorGradient()
+        {
+            // Populate the color keys at the relative time 0 and 1 (0 and 100%)
+            trailColorKey = new GradientColorKey[5];
+            trailColorKey[0].color = trailMainColor.Get();
+            trailColorKey[0].time = 0.5f;
+            trailColorKey[1].color = trailSubColor0.Get();
+            trailColorKey[1].time = 0.0f;
+            trailColorKey[2].color = trailSubColor1.Get();
+            trailColorKey[2].time = 1.0f;
+            trailColorKey[3].color = trailMainColor.Get();
+            trailColorKey[3].time = 0.75f;
+            trailColorKey[4].color = trailMainColor.Get();
+            trailColorKey[4].time = 0.25f;
+            // Populate the alpha  keys at relative time 0 and 1  (0 and 100%)
+            trailColorAlphaKey = new GradientAlphaKey[3];
+            trailColorAlphaKey[0].alpha = 1.0f;
+            trailColorAlphaKey[0].time = 0.0f;
+            trailColorAlphaKey[1].alpha = 1.0f;
+            trailColorAlphaKey[1].time = 1.0f;
+            trailColorAlphaKey[2].alpha = 1.0f;
+            trailColorAlphaKey[2].time = 0.5f;
+
+            trailColorGradient.SetKeys(trailColorKey, trailColorAlphaKey);
+
+        }
+
         private void Awake()
         {
             for (int i = 0; i < NUM_ROW; i++)
@@ -64,6 +102,7 @@ namespace LayeredScreen
                 isRowEmitterEnabled.Add(false);
                 elapsedTimesFromLastViewerAppeared[i] = 0.0f;
             }
+            udpateTrailColorGradient();
 
         }
 
@@ -166,6 +205,8 @@ namespace LayeredScreen
                 }
                 receivedScreenIdNumInOneRenderLoop = 0;
             }
+            //XXX:adhoc work around
+            udpateTrailColorGradient();
         }
 
         void OnDisable()
