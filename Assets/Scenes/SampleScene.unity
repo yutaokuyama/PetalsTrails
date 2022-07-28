@@ -198,6 +198,7 @@ Transform:
   m_Children:
   - {fileID: 1034700496}
   - {fileID: 1789161556}
+  - {fileID: 1273290258}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -395,7 +396,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trailEffect: {fileID: 194364762}
   manager: {fileID: 1736349532}
-  walkerTransform: {fileID: 1457935552}
 --- !u!1 &201494708
 GameObject:
   m_ObjectHideFlags: 0
@@ -1404,7 +1404,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 216c3b4afecef9648bbe3f2594a95344, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 0, y: 0}
+  position: {x: 0, y: -0.5}
+  manager: {fileID: 1736349532}
 --- !u!114 &1034700498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1648,6 +1649,51 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44c8b5c4c10739a47bcd57fbdc4fd94c, type: 3}
+--- !u!1 &1273290257
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1273290258}
+  - component: {fileID: 1273290259}
+  m_Layer: 0
+  m_Name: PostProcesses
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1273290258
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273290257}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 171459214}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1273290259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273290257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f26082b34ad8eda4eae59b352f3d7843, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 1736349532}
 --- !u!1 &1366282800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1836,7 +1882,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   trailEffect: {fileID: 1562900625}
   manager: {fileID: 1736349532}
-  walkerTransform: {fileID: 2010173194}
 --- !u!114 &1562900622
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -2132,24 +2177,135 @@ MonoBehaviour:
   syncMode: 0
   syncInterval: 0.1
   flaggedScreenIds: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
-  trailColor:
-    _key: TrailColor
+  trailMainColor:
+    _key: TrailMainColor
     defaultValue: {r: 0, g: 0, b: 0, a: 0}
+  trailSubColor0:
+    _key: TrailSubColor0
+    defaultValue: {r: 0, g: 0, b: 0, a: 0}
+  trailSubColor1:
+    _key: TrailSubColor1
+    defaultValue: {r: 0, g: 0, b: 0, a: 0}
+  trailColorGradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  leafMainColor:
+    _key: LeafMainColor
+    defaultValue: {r: 0, g: 0, b: 0, a: 0}
+  leafSubColor0:
+    _key: LeafSubColor0
+    defaultValue: {r: 0, g: 0, b: 0, a: 0}
+  leafSubColor1:
+    _key: LeafSubColor1
+    defaultValue: {r: 0, g: 0, b: 0, a: 0}
+  leafColorGradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  petalMainColor:
+    _key: PetalMainColor
+    defaultValue: {r: 0, g: 0, b: 0, a: 0}
+  petalSubColor0:
+    _key: PetalSubColor0
+    defaultValue: {r: 0, g: 0, b: 0, a: 0}
+  petalSubColor1:
+    _key: PetalSubColor1
+    defaultValue: {r: 0, g: 0, b: 0, a: 0}
+  petalColorGradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
   trailColorIntensity:
     _key: TrailColorIntensity
     defaultValue: 0
-  leafColor:
-    _key: LeafColor
-    defaultValue: {r: 0, g: 0, b: 0, a: 0}
   leafColorIntensity:
     _key: LeafColorIntensity
     defaultValue: 0
-  petalColor:
-    _key: PefalsColor
-    defaultValue: {r: 0, g: 0, b: 0, a: 0}
+  leafSizeMinMax:
+    _key: LeafSizeMinMax
+    defaultValue: {x: 0.1, y: 1.3}
   petalColorIntensity:
     _key: PetalColorIntensity
     defaultValue: 0
+  petalSizeMinMax:
+    _key: PetalSizeMinMax
+    defaultValue: {x: 0.1, y: 1.3}
   deviceId:
     _key: DeviceId
     defaultValue: 0
@@ -2162,9 +2318,9 @@ MonoBehaviour:
   TrailLifeTime:
     _key: TrailLifeTimeRange
     defaultValue: {x: 0.5, y: 4}
-  TrailWidth:
-    _key: TrailWidth
-    defaultValue: 0.03
+  TrailWidthMinMax:
+    _key: TrailWidthMinMax
+    defaultValue: {x: 0.03, y: 0.1}
   NumTrail:
     _key: NumTrail
     defaultValue: 200
@@ -2177,6 +2333,21 @@ MonoBehaviour:
   aquaOpacity:
     _key: AquaOpacity
     defaultValue: 0.4
+  trailEmitRate:
+    _key: TrailEmitRate
+    defaultValue: 40
+  edgeColor:
+    _key: RecolorEdgeColor
+    defaultValue: {r: 0, g: 0, b: 0, a: 1}
+  edgeThresh:
+    _key: RecolorEdgeThresh
+    defaultValue: 0.5
+  edgeContrast:
+    _key: RecolorContrast
+    defaultValue: 1
+  OSCPort:
+    _key: OSCPort
+    defaultValue: 6666
   _flowDetector: {fileID: 1885341659}
   currentPlayerPosition: {x: 0, y: 0, z: 0}
   viewerVelocityDirectionOfX:

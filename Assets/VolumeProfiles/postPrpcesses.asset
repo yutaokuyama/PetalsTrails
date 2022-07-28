@@ -21,10 +21,10 @@ MonoBehaviour:
     m_Value: 0
   edgeThreshold:
     m_OverrideState: 1
-    m_Value: 0.716
+    m_Value: 0.5
   edgeContrast:
-    m_OverrideState: 0
-    m_Value: 0.783
+    m_OverrideState: 1
+    m_Value: 1
   fillGradient:
     m_OverrideState: 0
     m_Value:
@@ -250,7 +250,7 @@ MonoBehaviour:
   active: 0
   opacity:
     m_OverrideState: 1
-    m_Value: 0.1
+    m_Value: 0.01
   edgeColor:
     m_OverrideState: 1
     m_Value: {r: 1, g: 1, b: 1, a: 1}
@@ -296,16 +296,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f077503be6ae942a1e1245dbd53ea9, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   quality:
     m_OverrideState: 1
     m_Value: 1
   threshold:
     m_OverrideState: 1
-    m_Value: 0.1
+    m_Value: 0.2
   intensity:
     m_OverrideState: 1
-    m_Value: 0.2
+    m_Value: 0.01
   scatter:
     m_OverrideState: 0
     m_Value: 0.7
