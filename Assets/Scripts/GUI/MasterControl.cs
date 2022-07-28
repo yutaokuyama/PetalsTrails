@@ -40,7 +40,10 @@ namespace LayeredScreen
                 manager.leafSubColor0.CreateElement(),
                 manager.leafSubColor1.CreateElement(),
                 manager.leafColorIntensity.CreateElement(),
-                manager.leafSizeMinMax.CreateElement()
+                manager.leafSizeMinMax.CreateElement(),
+                manager.viewerMoveSpeed.CreateElement(),
+                manager.delayCoef.CreateElement(),
+                manager.slowerDelayCoef.CreateElement()
             );
         }
     }

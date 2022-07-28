@@ -70,9 +70,12 @@ namespace LayeredScreen
         public PrefsFloat edgeThresh = new PrefsFloat("RecolorEdgeThresh", 0.5f);
         public PrefsFloat edgeContrast = new PrefsFloat("RecolorContrast", 1.0f);
         public PrefsInt OSCPort = new PrefsInt("OSCPort", 6666);
-        
-        public 
-        
+
+        public PrefsFloat viewerMoveSpeed = new PrefsFloat("ViewerMoveSpeed", 24.0f);
+        public PrefsFloat delayCoef = new PrefsFloat("DelayCoef", 1.2f);
+        public PrefsFloat slowerDelayCoef = new PrefsFloat("SlowerDelayCoef", 2.0f);
+
+
         OscServer _server;
         [SerializeField]
         private FlowDetector _flowDetector;
