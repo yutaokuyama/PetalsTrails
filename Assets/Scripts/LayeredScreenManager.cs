@@ -57,7 +57,7 @@ namespace LayeredScreen
         public PrefsBool delayMode = new PrefsBool("DelayMode", false);
 
         public PrefsVector2 TrailLifeTime = new PrefsVector2("TrailLifeTimeRange", new Vector2(0.5f, 4.0f));
-        public PrefsFloat TrailWidth = new PrefsFloat("TrailWidth",0.03f);
+        public PrefsVector2 TrailWidthMinMax = new PrefsVector2("TrailWidthMinMax", new Vector2(0.03f, 0.1f));
         public PrefsInt NumTrail = new PrefsInt("NumTrail", 200);
 
         public PrefsFloat bloomIntensity = new PrefsFloat("BloomIntensity", 0.9f);

@@ -26,7 +26,7 @@ namespace LayeredScreen
             return UI.Column(
                 manager.NumTrail.CreateElement(),
                 manager.TrailLifeTime.CreateElement(),
-                manager.TrailWidth.CreateElement(),
+                manager.TrailWidthMinMax.CreateElement(),
                 manager.trailMainColor.CreateElement(),
                 manager.trailSubColor0.CreateElement(),
                 manager.trailSubColor1.CreateElement(),
