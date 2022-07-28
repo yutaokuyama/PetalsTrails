@@ -1,5 +1,70 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-7076667704453049406
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4ad42d51df0b2f43ba2cab92a53036d, type: 3}
+  m_Name: Recolor
+  m_EditorClassIdentifier: 
+  active: 1
+  edgeColor:
+    m_OverrideState: 1
+    m_Value: {r: 0, g: 0, b: 0, a: 1}
+  edgeSource:
+    m_OverrideState: 1
+    m_Value: 0
+  edgeThreshold:
+    m_OverrideState: 1
+    m_Value: 0.716
+  edgeContrast:
+    m_OverrideState: 0
+    m_Value: 0.783
+  fillGradient:
+    m_OverrideState: 0
+    m_Value:
+      serializedVersion: 2
+      key0: {r: 0, g: 0, b: 1, a: 1}
+      key1: {r: 1, g: 0, b: 0, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+  fillOpacity:
+    m_OverrideState: 0
+    m_Value: 0
+  ditherType:
+    m_OverrideState: 0
+    m_Value: 2
+  ditherStrength:
+    m_OverrideState: 0
+    m_Value: 0
 --- !u!114 &-4770405707566792507
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -165,6 +230,7 @@ MonoBehaviour:
   m_Name: postPrpcesses
   m_EditorClassIdentifier: 
   components:
+  - {fileID: -7076667704453049406}
   - {fileID: 5698816221385104692}
   - {fileID: 5535455381541147685}
   - {fileID: -4770405707566792507}
@@ -181,31 +247,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e12e84e1766b64919984e8b1ecd65226, type: 3}
   m_Name: Aqua
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   opacity:
     m_OverrideState: 1
     m_Value: 0.1
   edgeColor:
     m_OverrideState: 1
-    m_Value: {r: 0, g: 0, b: 0, a: 1}
+    m_Value: {r: 1, g: 1, b: 1, a: 1}
   edgeContrast:
     m_OverrideState: 1
-    m_Value: 2.89
+    m_Value: 0.2
   fillColor:
     m_OverrideState: 1
     m_Value: {r: 1, g: 1, b: 1, a: 1}
   blurWidth:
     m_OverrideState: 1
-    m_Value: 0.629
+    m_Value: 0
   blurFrequency:
     m_OverrideState: 1
-    m_Value: 0.231
+    m_Value: 0.064
   hueShift:
     m_OverrideState: 1
-    m_Value: 0.016
+    m_Value: 0
   interval:
     m_OverrideState: 1
-    m_Value: 0.82
+    m_Value: 0.1
   iteration:
     m_OverrideState: 0
     m_Value: 20
@@ -230,7 +296,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24f077503be6ae942a1e1245dbd53ea9, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   quality:
     m_OverrideState: 1
     m_Value: 1

@@ -67,8 +67,12 @@ namespace LayeredScreen
 
         public PrefsInt trailEmitRate = new PrefsInt("TrailEmitRate", 40);
 
+        public PrefsColor edgeColor = new PrefsColor("RecolorEdgeColor", Color.black);
+        public PrefsFloat edgeThresh = new PrefsFloat("RecolorEdgeThresh", 0.5f);
+        public PrefsFloat edgeContrast = new PrefsFloat("RecolorContrast", 1.0f);
+
         
-        
+        public 
         
         OscServer _server;
         [SerializeField]

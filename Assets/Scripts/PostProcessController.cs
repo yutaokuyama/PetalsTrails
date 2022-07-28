@@ -18,13 +18,14 @@ namespace LayeredScreen
 
         private Bloom bloom;
         private Aqua aqua;
+        private Recolor recolor;
         
         // Start is called before the first frame update
         void Start()
         {
             if (bloom == null) postProsecces.TryGet<Bloom>(out bloom);
-
             if (aqua == null) postProsecces.TryGet<Aqua>(out aqua);
+            if (recolor == null) postProsecces.TryGet<Recolor>(out recolor);
         }
 
         // Update is called once per frame
@@ -34,7 +35,12 @@ namespace LayeredScreen
             bloom.intensity.value = manager.bloomIntensity.Get();
 
             aqua.opacity.value = manager.aquaOpacity.Get();
-            
+
+            recolor.edgeThreshold.value = manager.edgeThresh.Get();
+            recolor.edgeContrast.value = manager.edgeContrast.Get();
+            recolor.edgeColor.value = manager.edgeColor.Get();
+
+
         }
     }
 }

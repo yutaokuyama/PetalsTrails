@@ -23,8 +23,8 @@ namespace LayeredScreen
 
         public Element CreateElement(LabelElement _)
         {
-            return UI.Column(
-                manager.NumTrail.CreateElement(),
+            return UI.Column(                                
+                manager.trailEmitRate.CreateElement(),
                 manager.TrailLifeTime.CreateElement(),
                 manager.TrailWidthMinMax.CreateElement(),
                 manager.trailMainColor.CreateElement(),
@@ -47,7 +47,9 @@ namespace LayeredScreen
                 manager.aquaOpacity.CreateElement(),
                 manager.bloomIntensity.CreateElement(),
                 manager.bloomThresh.CreateElement(),
-                manager.trailEmitRate.CreateElement(),
+                manager.edgeColor.CreateElement(),
+                manager.edgeThresh.CreateElement(),
+                manager.edgeContrast.CreateElement(),
                 UI.Label(() => $"file path: {PrefsGUI.Kvs.PrefsKvsPathSelector.path}"),
                 UI.Button(nameof(Prefs.Save), Prefs.Save),
                 UI.Button(nameof(Prefs.DeleteAll), Prefs.DeleteAll)
