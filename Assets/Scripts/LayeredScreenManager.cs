@@ -56,7 +56,7 @@ namespace LayeredScreen
         public PrefsString spoutSenderName = new PrefsString("SpoutSenderName", "preo");
         public PrefsBool delayMode = new PrefsBool("DelayMode", false);
 
-        public PrefsVector2 TrailLifeTime = new PrefsVector2("TrailLifeTimeRange", new Vector2(0.5f, 4.0f));
+        public PrefsVector2 TrailLifeTime = new PrefsVector2("TrailLifeTimeRange", new Vector2(1.0f, 4.0f));
         public PrefsVector2 TrailWidthMinMax = new PrefsVector2("TrailWidthMinMax", new Vector2(0.03f, 0.1f));
         public PrefsInt NumTrail = new PrefsInt("NumTrail", 200);
 
@@ -64,6 +64,8 @@ namespace LayeredScreen
         public PrefsFloat bloomThresh = new PrefsFloat("BloomThresh", 0.9f);
 
         public PrefsFloat aquaOpacity = new PrefsFloat("AquaOpacity", 0.4f);
+
+        public PrefsInt trailEmitRate = new PrefsInt("TrailEmitRate", 40);
 
         
         

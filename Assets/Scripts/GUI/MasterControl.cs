@@ -47,6 +47,7 @@ namespace LayeredScreen
                 manager.aquaOpacity.CreateElement(),
                 manager.bloomIntensity.CreateElement(),
                 manager.bloomThresh.CreateElement(),
+                manager.trailEmitRate.CreateElement(),
                 UI.Label(() => $"file path: {PrefsGUI.Kvs.PrefsKvsPathSelector.path}"),
                 UI.Button(nameof(Prefs.Save), Prefs.Save),
                 UI.Button(nameof(Prefs.DeleteAll), Prefs.DeleteAll)

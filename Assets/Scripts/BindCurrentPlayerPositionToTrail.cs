@@ -34,9 +34,8 @@ namespace LayeredScreen
             trailEffect.SetVector2("PetalSizeMinMax", manager.petalSizeMinMax.Get());
             trailEffect.SetVector2("LeafSizeMinMax", manager.leafSizeMinMax.Get());
             trailEffect.SetVector2("TrailWidthMinMax", manager.TrailWidthMinMax.Get());
-            /*            trailEffect.SetInt("NumTrailEmit", manager.NumTrail.Get());
-            *//*            trailEffect.SetVector2("TrailLifeTimeMinMax", manager.TrailLifeTime.Get());
-            */
+            trailEffect.SetInt("TrailEmitRate", manager.trailEmitRate.Get());
+            trailEffect.SetVector2("TrailLifeTimeMinMax", manager.TrailLifeTime.Get());
         }
     }
 }
