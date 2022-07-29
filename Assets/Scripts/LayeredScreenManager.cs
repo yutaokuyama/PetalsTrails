@@ -50,6 +50,8 @@ namespace LayeredScreen
 
         public PrefsFloat petalColorIntensity = new PrefsFloat("PetalColorIntensity");
         public PrefsVector2 petalSizeMinMax = new PrefsVector2("PetalSizeMinMax", new Vector2(0.1f, 1.3f));
+        public PrefsInt numPetalEmit = new PrefsInt("NumPetalEmit", 100);
+        public PrefsFloat leafProbability = new PrefsFloat("LeafProberbiity", 0.2f);
 
         public PrefsInt deviceId = new PrefsInt("DeviceId");
         public PrefsString spoutSenderName = new PrefsString("SpoutSenderName", "preo");

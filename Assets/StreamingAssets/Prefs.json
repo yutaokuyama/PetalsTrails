@@ -143,6 +143,26 @@
         {
             "key": "RecolorContrast",
             "value": "{\"value\":1.0}"
+        },
+        {
+            "key": "NumPetalEmit",
+            "value": "{\"value\":100}"
+        },
+        {
+            "key": "LeafProberbiity",
+            "value": "{\"value\":0.05000000074505806}"
+        },
+        {
+            "key": "ViewerMoveSpeed",
+            "value": "{\"value\":24.0}"
+        },
+        {
+            "key": "DelayCoef",
+            "value": "{\"value\":1.2000000476837159}"
+        },
+        {
+            "key": "SlowerDelayCoef",
+            "value": "{\"value\":2.0}"
         }
     ]
 }
